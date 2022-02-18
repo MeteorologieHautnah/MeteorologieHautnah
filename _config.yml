@@ -45,8 +45,8 @@ footer:
       url: "https://github.com/MeteorologieHautnah/MeteorologieHautnah"
 
 # Build settings
-remote_theme: "mmistakes/minimal-mistakes@4.24.0"
-minimal_mistakes_skin: "air"
+remote_theme: "mmistakes/minimal-mistakes"
+#minimal_mistakes_skin: "air"
 plugins:
   - jekyll-feed
   - jekyll-include-cache
