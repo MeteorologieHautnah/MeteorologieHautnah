@@ -1,0 +1,26 @@
+Johannes:
+  name        : "Johannes Röttenbacher"
+  bio         : "Wer Wolken studiert, kennt nur schönes Wetter!"
+  avatar      : "/assets/images/bio-photo-johannes.jpg"
+  links:
+    - label: "Twitter"
+      icon: "fab fa-wa fa-twitter-square"
+      url: "https://twitter.com/jroettenbacher"
+
+#Oscar:
+#  name        : "Oscar Ritter"
+#  bio         : "I ordered what?"
+#  avatar      : "/assets/images/bio-photo-oscar.jpg"
+#  links:
+#    - label: "Twitter"
+#      icon: "fab fa-fw fa-twitter-square"
+#      url: "https://twitter.com/Snab_LE"
+#
+#Jakob:
+#  name        : "Jakob Thoböll"
+#  bio         : "I ordered what?"
+#  avatar      : "/assets/images/bio-photo-jakob.jpg"
+#  links:
+#    - label: "Twitter"
+#      icon: "fab fa-fw fa-twitter-square"
+#      url: "https://twitter.com/"
