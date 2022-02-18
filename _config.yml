@@ -27,12 +27,22 @@ description: >- # this means to ignore newlines until "baseurl:"
   Webseite für das Citizen Science Projekt "Meteorologie hautnah" des Instituts für Meteorologie der Universität Leipzig.
 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://meteorologiehautnah.github.io/MeteorologieHautnah/" # the base hostname & protocol for your site, e.g. http://example.com
 locale: "de"
 twitter:
   username: MeteoHautnah
 github:
   username:  MeteorologieHautnah
+lsi: false
+safe: true
+source: MeteorologieHautnah
+incremental: false
+highlighter: rouge
+gist:
+  noscript: false
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
 
 footer:
   links:

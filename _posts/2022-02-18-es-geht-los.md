@@ -1,7 +1,6 @@
 ---
 title:  "Es geht los"
 date:   2022-02-18 20:23:00 +0100
-categories: update
 author: Johannes
 ---
 
