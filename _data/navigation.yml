@@ -1,13 +1,13 @@
 # main links
 main:
   - title: "Home"
-    url: /home
+    url: https://meteorologiehautnah.github.io/MeteorologieHautnah/home
   - title: "Blog"
-    url: /index
+    url: https://meteorologiehautnah.github.io/MeteorologieHautnah/index
   - title: "Über uns"
-    url: /about/
+    url: https://meteorologiehautnah.github.io/MeteorologieHautnah/about
   - title: "Kontakt"
-    url: /contact/
+    url: https://meteorologiehautnah.github.io/MeteorologieHautnah/contact
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"

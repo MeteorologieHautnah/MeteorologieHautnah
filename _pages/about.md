@@ -1,5 +1,5 @@
 ---
-permalink: /about
+permalink: https://meteorologiehautnah.github.io/MeteorologieHautnah/about
 ---
 
 ![Gruppenfoto](/assets/images/group-photo.jpg){:class="img-responsive"}
