@@ -7,7 +7,7 @@ Wir befinden uns derzeit noch in der Aufbauphase und werden diese Webseite Stüc
 
 Falls Du jetzt schon Lust hast mitzumachen, kannst du dich gerne bei uns unter folgenden E-mailadresse melden:
 
-johannes.roettenbacher@uni-leipzig.de
+meteorologie.hautnah@uni-leipzig.de
 
 Um es uns einfacher zu machen, setze am besten "Teilnahme Meteorologie hautnah" in den Betreff Deiner E-mail.
 
