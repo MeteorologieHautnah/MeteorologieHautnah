@@ -1,5 +1,5 @@
 ---
-permalink: https://meteorologiehautnah.github.io/MeteorologieHautnah/contact
+permalink: /contact
 ---
 
 Meteorologie hautnah\

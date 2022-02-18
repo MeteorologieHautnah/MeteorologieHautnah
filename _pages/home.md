@@ -2,7 +2,7 @@
 author_profile: true
 title: "Willkommen"
 layout: home
-permalink: https://meteorologiehautnah.github.io/MeteorologieHautnah/home
+permalink: /home
 date: 2022-02-18T20:20:00-01:00
 ---
 

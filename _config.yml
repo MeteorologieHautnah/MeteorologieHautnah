@@ -33,16 +33,7 @@ twitter:
   username: MeteoHautnah
 github:
   username:  MeteorologieHautnah
-lsi: false
-safe: true
-source: MeteorologieHautnah
-incremental: false
-highlighter: rouge
-gist:
-  noscript: false
-kramdown:
-  math_engine: mathjax
-  syntax_highlighter: rouge
+search: true
 
 footer:
   links:
@@ -72,7 +63,7 @@ paginate_path: /_posts/page:num
 defaults:
   # _posts
   - scope:
-      path: ""
+      path: "_posts"
       type: posts
     values:
       layout: single
@@ -83,7 +74,7 @@ defaults:
       share: true
   # _pages
   - scope:
-      path: ""
+      path: "_pages"
       type: pages
     values:
         layout: single
