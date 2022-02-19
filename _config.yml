@@ -45,14 +45,17 @@ footer:
       url: "https://github.com/MeteorologieHautnah/MeteorologieHautnah"
 
 # Build settings
+markdown: kramdown
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 remote_theme: "mmistakes/minimal-mistakes"
-#minimal_mistakes_skin: "air"
+minimal_mistakes_skin: "air"
+
 plugins:
   - jekyll-feed
   - jekyll-include-cache
   - jekyll-email-protect
-
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+  - jekyll-paginate
+  - jekyll-gist
 
 comments:
   provider: "utterances"
@@ -85,8 +88,8 @@ atom_feed:
   hide: true
 
 include:
-  - "_pages"
-  - "_posts"
+  - _pages
+  - _posts
 
 # Exclude from processing.
 # The following items will not be processed, by default.
