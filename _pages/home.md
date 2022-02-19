@@ -10,7 +10,7 @@ Willkommen zu unserem Citizen Science Projekt "Meteorologie hautnah". Zusammen m
 
 Wir befinden uns derzeit noch in der Aufbauphase und werden diese Webseite Stück für Stück mit Informationen rund um das Projekt und die Teilnahme erweitern.
 
-Falls Du jetzt schon Lust hast mitzumachen, kannst du dich gerne bei uns unter folgenden E-Mail-Adresse melden:
+Falls Du jetzt schon Lust hast mitzumachen, kannst Du Dich gerne bei uns unter folgenden E-Mail-Adresse melden:
 
 meteorologie.hautnah@uni-leipzig.de
 
