@@ -8,7 +8,7 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 #
-# If you need help with YAML syntax, here are some quick references for you: 
+# If you need help with YAML syntax, here are some quick references for you:
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 #
@@ -20,19 +20,18 @@
 
 title: Meteorologie hautnah
 subtitle: Citizien Science Projekt 2022
-repository: "MeteorologieHautnah/MeteorologieHautnah"
+#repository: "MeteorologieHautnah/MeteorologieHautnah"
 logo: /assets/images/mt_aufsicht.jpg
 email: meteorologie.hautnah@uni-leipzig.de
 description: >- # this means to ignore newlines until "baseurl:"
   Webseite für das Citizen Science Projekt "Meteorologie hautnah" des Instituts für Meteorologie der Universität Leipzig.
 
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://meteorologiehautnah.github.io/MeteorologieHautnah/" # the base hostname & protocol for your site, e.g. http://example.com
+#baseurl: "" # the subpath of your site, e.g. /blog
+#url: "https://meteorologiehautnah.github.io/MeteorologieHautnah/" # the base hostname & protocol for your site, e.g. http://example.com
 locale: "de"
-twitter:
-  username: MeteoHautnah
-github:
-  username:  MeteorologieHautnah
+timezone: "Europe/Berlin" # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+twitter_username: MeteoHautnah
+github_username:  MeteorologieHautnah
 search: true
 
 footer:
@@ -57,8 +56,8 @@ plugins:
   - jekyll-paginate
   - jekyll-gist
 
-comments:
-  provider: "utterances"
+#comments:
+#  provider: "utterances"
 
 paginate: 5 # amount of posts to show
 paginate_path: /_posts/page:num
@@ -66,7 +65,7 @@ paginate_path: /_posts/page:num
 defaults:
   # _posts
   - scope:
-      path: "_posts"
+      path: ""
       type: posts
     values:
       layout: single
@@ -89,7 +88,6 @@ atom_feed:
 
 include:
   - _pages
-  - _posts
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -110,3 +108,11 @@ include:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+category_archive:
+  type: liquid
+  path: /categories/
+
+tag_archive:
+  type: liquid
+  path: /tags/
