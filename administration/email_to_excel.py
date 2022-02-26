@@ -7,6 +7,7 @@ Call with: `python email_to_excel.py "path/to/your/mbox/file" "path/to/exel/out.
 """
 
 if __name__ == "__main__":
+    import os
     import mailbox
     import sys
     import pandas as pd
@@ -19,7 +20,13 @@ if __name__ == "__main__":
     print(f"Outname: {outname}\n")
 
     mbox = mailbox.mbox(path)
-    mbox.lock()
+    try:
+        mbox.lock()
+    except mailbox.ExternalClashError:
+        # the last lock on the mailbox was probably not removed
+        os.remove(f"{path.replace('Teilnehmer', 'Teilnehmer.lock')}")
+        mbox.lock()
+
     df = dict(Nummer=[], Nachname=[], Vorname=[], EMail=[])
     for i, message in enumerate(mbox):
         df["Nummer"].append(i+1)
