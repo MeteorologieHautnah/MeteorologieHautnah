@@ -6,11 +6,70 @@ Call with: `python email_to_excel.py "path/to/your/mbox/file" "path/to/exel/out.
 *author*: Johannes Röttenbacher
 """
 
+
+def parse_email(header):
+    """
+    Given a header from a mbox message like "From" or "Cc" returns the best guess of first name, last name and the
+    email address
+
+    :param header: Input from a mbox message
+
+    :return: Tuple with first name, last name and email address
+    """
+    parts = header.split(" ")
+    if len(parts) == 3:
+        vorname = parts[0]
+        nachname = parts[1]
+        email = re.sub(r"[<>]", "", parts[2])
+    elif len(parts) == 2:
+        # maybe there is only one name given in the From part, ignore it and use only the email address
+        # also happens if a Umlaut is involved
+        vorname = "NA"
+        nachname = "NA"
+        email = re.sub(r"[<>]", "", parts[1])
+    else:
+        # in this case the From does not include a first and last name
+        email = re.sub(r"[<>]", "", parts[0])
+        # try and guess the first and last name
+        if parts[0].count(".") == 2:
+            # two dots hint at an e-mail address of the form: firstname.lastname@provider.com
+            mail_split = parts[0].split(".")
+            vorname = mail_split[0].capitalize()
+            nachname = mail_split[1].split("@")[0].capitalize()
+        else:
+            vorname = "NA"
+            nachname = "NA"
+    # clean strings and replace numeric characters with NA
+    try:
+        # try to convert the firstname to an integer, this should throw an error on a normal string
+        check = int(vorname)
+        # if it succeeds Nachname is a number, replace it with NA
+        vorname = "NA"
+    except ValueError:
+        pass
+    finally:
+        # remove non-alphanumeric characters
+        vorname = re.sub(r'[^a-zA-Z0-9]', '', vorname)
+    try:
+        # try to convert the lastname to an integer, this should throw an error on a normal string
+        check = int(nachname)
+        # if it succeeds Nachname is a number, replace it with NA
+        nachname = "NA"
+    except ValueError:
+        pass
+    finally:
+        # remove non-alphanumeric characters
+        nachname = re.sub(r'[^a-zA-Z0-9]', '', nachname)
+
+    return nachname, vorname, email
+
+
 if __name__ == "__main__":
     import os
     import mailbox
     import sys
     import pandas as pd
+    import re
 
     # quick and dirty command line read in
     path = str(sys.argv[1])
@@ -18,6 +77,7 @@ if __name__ == "__main__":
 
     print(f"Input Path: {path}\n")
     print(f"Outname: {outname}\n")
+    emails_to_exclude = ["johannes.roettenbacher@uni-leipzig.de", "ritter@tropos.de", "jakob.thoboell@web.de"]
 
     mbox = mailbox.mbox(path)
     try:
@@ -27,45 +87,22 @@ if __name__ == "__main__":
         os.remove(f"{path.replace('Teilnehmer', 'Teilnehmer.lock')}")
         mbox.lock()
 
-    df = dict(Nummer=[], Nachname=[], Vorname=[], EMail=[])
-    for i, message in enumerate(mbox):
-        df["Nummer"].append(i+1)
-        parts = message["From"].split(" ")
-        if len(parts) == 3:
-            df["Vorname"].append(parts[0])
-            df["Nachname"].append(parts[1])
-            df["EMail"].append(parts[2].replace("<", "").replace(">", ""))
-        else:
-            # in this case the From does not include a first and last name
-            df["EMail"].append(parts[0])
-            # try and guess the first and last name
-            if parts[0].count(".") == 2:
-                # two dots hint at an e-mail address of the form: firstname.lastname@provider.com
-                mail_split = parts[0].split(".")
-                df["Vorname"].append(mail_split[0].capitalize())
-                df["Nachname"].append(mail_split[1].split("@")[0].capitalize())
+    df = pd.DataFrame(dict(Nachname=[], Vorname=[], EMail=[]))
+    for message in mbox:
+        df.loc[len(df.index)] = parse_email(message["From"])
+
+        # check the CC and add that also to the participant list
+        try:
+            parts = message["Cc"].split(" ")
+            nachname, vorname, email = parse_email(message["Cc"])
+            if any(mail in email for mail in emails_to_exclude):
+                pass
             else:
-                df["Vorname"].append("NA")
-                df["Nachname"].append("NA")
-
-    # check that Vorname and Nachname are strings and not yearnumbers
-    for i, firstname in enumerate(df["Vorname"]):
-        try:
-            # try to convert the firstname to an integer, this should throw an error on a normal string
-            check = int(firstname)
-            # if it succeeds Nachname is a number, replace it with NA
-            df["Vorname"][i] = "NA"
-        except ValueError:
-            pass
-        try:
-            # try to convert the lastname to an integer, this should throw an error on a normal string
-            check = int(df["Nachname"][i])
-            # if it succeeds Nachname is a number, replace it with NA
-            df["Nachname"][i] = "NA"
-        except ValueError:
+                df.loc[len(df.index)] = [nachname, vorname, email]
+        except AttributeError:
+            # in this case a None Object is returned which does not have a split method -> no Cc
             pass
 
-    df = pd.DataFrame(df)  # convert dictionary to dataframe
-    df.to_excel(outname, index=False)  # save to Excel
+    df.to_excel(outname, index_label="Nummer")  # save to Excel
     print(f"Saved {outname}")
     mbox.unlock()
