@@ -2,6 +2,7 @@
 layout: home
 title: "Datenschutz"
 description: "Datenschutz"
+permalink: /datenschutz
 ---
 
 ## Datenschutzerklärung
