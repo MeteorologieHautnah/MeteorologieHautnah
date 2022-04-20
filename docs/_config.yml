@@ -19,7 +19,7 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Meteorologie hautnah
-subtitle: Citizien Science Projekt 2022
+subtitle: Hochschulwettbewerb 2022
 #repository: "MeteorologieHautnah/MeteorologieHautnah"
 logo: /assets/images/mt_aufsicht.jpg
 email: meteorologie.hautnah@uni-leipzig.de
@@ -42,6 +42,9 @@ footer:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/MeteorologieHautnah/MeteorologieHautnah"
+    - label: "Hochschulwettbewerb"
+      icon: "assets/Logo_HSW_22_transparent.png"
+      urls: "https://www.wissenschaft-im-dialog.de/projekte/hochschulwettbewerb-mitforschen-erwuenscht/"
 
 # Build settings
 markdown: kramdown

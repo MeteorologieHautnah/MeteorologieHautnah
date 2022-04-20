@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: home
 title: "Datenschutz"
 description: "Datenschutz"
 ---

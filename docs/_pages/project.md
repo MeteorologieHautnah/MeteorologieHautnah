@@ -4,7 +4,7 @@ layout: home
 permalink: /project
 ---
 
-Bei unserem Projekt "Meteorologie hautnah" geht es zum einen darum mit Leipziger Pendlerinnen und Pendlern Wetterdaten (Temperatur, Luftfeuchte und Druck) aufzuzeichnen und zum anderen darum den Teilnehmern die wissenschaftliche Arbeitsmethode in interaktiven Workshops näherzubringen.
+Bei unserem Projekt "Meteorologie hautnah" geht es zum einen darum mit Leipziger Pendlerinnen und Pendlern Wetterdaten zum Leipziger Stadtklima (Temperatur, Luftfeuchte und Druck) aufzuzeichnen und zum anderen darum den Teilnehmern die wissenschaftliche Arbeitsmethode in interaktiven Workshops näherzubringen.
 
 Den ersten Teil möchten wir mithilfe des MeteoTrackers umsetzen, einem kleinen Sensor, der am Fahrrad oder Autodach befestigt werden kann und die eben genannten Parameter misst.
 Diese werden dann direkt über die MeteoTracker App in ein Online-Portal hochgeladen und können von der teilnehmenden Person entweder in diesem Portal oder auf ihrem Smartphone visualisiert werden.

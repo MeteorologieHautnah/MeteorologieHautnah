@@ -4,10 +4,16 @@ main:
     url: /home
   - title: "Blog"
     url: /index
+  - title: "Projekt"
+    url: /project
+  - title: "FAQ"
+    url: /faq
   - title: "Über uns"
     url: /about
   - title: "Kontakt"
     url: /contact
+  - title: "Datenschutz"
+    url: /datenschutz
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
