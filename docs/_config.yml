@@ -42,9 +42,6 @@ footer:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/MeteorologieHautnah/MeteorologieHautnah"
-    - label: "Hochschulwettbewerb"
-      icon: "assets/Logo_HSW_22_transparent.png"
-      urls: "https://www.wissenschaft-im-dialog.de/projekte/hochschulwettbewerb-mitforschen-erwuenscht/"
 
 # Build settings
 markdown: kramdown
