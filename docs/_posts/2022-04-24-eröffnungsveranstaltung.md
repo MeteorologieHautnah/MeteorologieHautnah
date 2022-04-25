@@ -10,7 +10,7 @@ Es ist viel passiert in den letzten Wochen. Wir haben uns um viele organisatoris
 
 Die Eröffnungsveranstaltung ist öffentlich und findet im Hörsaalgebäude am Campus Augustusplatz statt. Wir würden uns freuen, noch mehr Teilnehmer:innen begrüßen zu können und laden hiermit alle Interessierten ganz herzlich ein. Wir starten am **Samstag 30. April** um **10:00 Uhr** im **Hörsaal 2** im Hörsaalgebäude auf dem Campus Augustusplatz der Universität Leipzig.
 
-Zur Übersicht findet ihr [hier](/assets/files/2019_04_15_Plan_DIN_A3_QUER.pdf) einen Lageplan des Campus. Das Hörsaalgebäude ist das Haus mit der Nummer 5. Die Anfahrt ist mit dem Rad am einfachsten und da wir der ersten Gruppe auch schon die MeteoTracker aushändigen wollen, lohnt sich die Anfahrt mit dem Rad gleich doppelt.
+Zur Übersicht findet ihr [hier]({{ site.baseurl }}/assets/files/2019_04_15_Plan_DIN_A3_QUER.pdf) einen Lageplan des Campus. Das Hörsaalgebäude ist das Haus mit der Nummer 5. Die Anfahrt ist mit dem Rad am einfachsten und da wir der ersten Gruppe auch schon die MeteoTracker aushändigen wollen, lohnt sich die Anfahrt mit dem Rad gleich doppelt.
 
 Natürlich könnt ihr euch auch noch vorher per E-Mail (<meteorologie.hautnah@uni-leipzig.de>) bei uns melden.
 
