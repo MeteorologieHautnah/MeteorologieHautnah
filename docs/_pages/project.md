@@ -15,6 +15,32 @@ Nach zwei Wochen mit dem Gerät wollen wir dann einen interaktiven Workshop mit 
 Um möglichst viele Teilnehmende zu involvieren, planen wir die Workshops grundsätzlich für den Samstag und die Messfahrt für den darauf folgenden Sonntag.
 Die Auswertung der Daten beginnt dann entweder direkt im Anschluss an die Messfahrt oder zu einem anderen Termin. Hier bietet sich auch der Übergabetermin mit der nächsten Gruppe an.
 
+## Termine
+
+**30. April 2022**  
+Eröffnungsveranstaltung
+
+**14. Mai 2022**  
+Workshop mit Gruppe 1
+
+**28. Mai 2022**  
+Abschlussworkshop mit Gruppe 1 und Übergabe an Gruppe 2
+
+**11. Juni 2022**  
+Workshop mit Gruppe 2
+
+**2. Juli 2022**  
+Abschlussworkshop mit Gruppe 2 und Übergabe an Gruppe 3
+
+**16. Juli 2022**  
+Workshop mit Gruppe 3
+
+**30. Juli 2022**  
+Abschlussworkshop mit Gruppe 3
+
+**September/Oktober**  
+Abschlussveranstaltung
+
 ## Dokumente
 
 [Datenschutzerklärung für Teilnehmende]({{ site.baseurl }}/assets/files/Datenschutzerklärung.pdf)
