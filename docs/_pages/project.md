@@ -17,15 +17,10 @@ Die Auswertung der Daten beginnt dann entweder direkt im Anschluss an die Messfa
 
 ## Dokumente
 
-[Datenschutzerklärung für Teilnehmende][1]
+[Datenschutzerklärung für Teilnehmende]({{ site.baseurl }}/assets/files/Datenschutzerklärung.pdf)
 
-[Datenschutzerklärung MeteoTracker englisch][2]
+[Datenschutzerklärung MeteoTracker englisch][({{ site.baseurl }}/assets/files/Data_processing_consent_EN.pdf)
 
-[Datenschutzerklärung MeteoTracker deutsch][3]
+[Datenschutzerklärung MeteoTracker deutsch]({{ site.baseurl }}/assets/files/Data_processing_consent_DE.pdf)
 
-[Nutzungsvereinbarung MeteoTracker][4]
-
-[1]:{{ site.baseurl }}/assets/files/Datenschutzerklärung.pdf
-[2]:{{ site.baseurl }}/assets/files/Data_processing_consent_EN.pdf
-[3]:{{ site.baseurl }}/assets/files/Data_processing_consent_DE.pdf
-[4]:{{ site.baseurl }}/assets/files/Nutzungsvertrag_MeteoTracker.pdf
+[Nutzungsvereinbarung MeteoTracker]({{ site.baseurl }}/assets/files/Nutzungsvertrag_MeteoTracker.pdf)
