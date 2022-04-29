@@ -4,6 +4,11 @@ title: "Datenschutz"
 description: "Datenschutz"
 permalink: /datenschutz
 ---
+## Datenschutzerklärung für Teilnehmende
+
+Hier können Sie die Datenschutzerklärung zur Teilnahme am Projekt herunterladen: [Datenschutzerklärung für Teilnehmende][1]
+
+Weitere Dokumente finden Sie [hier]({% link _pages/project.md %}).
 
 ## Datenschutzerklärung
 
@@ -52,3 +57,5 @@ Dies ist notwendig, damit der Browser die angeforderte Seite laden und an Ihren 
 Beim http-Request werden neben Ihrer IP-Adresse und der angeforderten Seite auch der Referrer (die Seite auf der Sie den Link geklickt haben), Informationen über Ihren Browser- und Ihr Betriebssystems an den Web-Server übermittelt
 
 Der Hoster speichert diese Informationen in Server-Logs, um den Betrieb zu überwachen, damit Störungen un Missbrauchsfälle schnell erkannt und behoben werden können.
+
+[1]:{{ site.url }}/assets/files/Datenschutzerklärung.pdf

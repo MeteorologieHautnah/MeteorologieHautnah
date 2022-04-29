@@ -4,7 +4,7 @@ layout: home
 permalink: /project
 ---
 
-Bei unserem Projekt "Meteorologie hautnah" geht es zum einen darum mit Leipziger Pendlerinnen und Pendlern Wetterdaten zum Leipziger Stadtklima (Temperatur, Luftfeuchte und Druck) aufzuzeichnen und zum anderen darum den Teilnehmern die wissenschaftliche Arbeitsmethode in interaktiven Workshops näherzubringen.
+Bei unserem Projekt "Meteorologie hautnah" geht es zum einen darum mit Leipziger Pendlerinnen und Pendlern Wetterdaten zum Leipziger Stadtklima (Temperatur, Luftfeuchte und Druck) aufzuzeichnen und zum anderen darum den Teilnehmenden die wissenschaftliche Arbeitsmethode in interaktiven Workshops näherzubringen.
 
 Den ersten Teil möchten wir mithilfe des MeteoTrackers umsetzen, einem kleinen Sensor, der am Fahrrad oder Autodach befestigt werden kann und die eben genannten Parameter misst.
 Diese werden dann direkt über die MeteoTracker App in ein Online-Portal hochgeladen und können von der teilnehmenden Person entweder in diesem Portal oder auf ihrem Smartphone visualisiert werden.
@@ -14,3 +14,18 @@ Wir beabsichtigen derzeit 40 MeteoTracker für jeweils einen Monat auszugeben un
 Nach zwei Wochen mit dem Gerät wollen wir dann einen interaktiven Workshop mit den Teilnehmenden abhalten. Hierbei soll es um die Planung einer gemeinsamen Messfahrt gehen, welche sich entweder mit einer von uns vorbereiteten oder einer von den Teilnehmenden eingebrachten spezifischen Frage zum Leipziger Stadtklima beschäftigt. 
 Um möglichst viele Teilnehmende zu involvieren, planen wir die Workshops grundsätzlich für den Samstag und die Messfahrt für den darauf folgenden Sonntag.
 Die Auswertung der Daten beginnt dann entweder direkt im Anschluss an die Messfahrt oder zu einem anderen Termin. Hier bietet sich auch der Übergabetermin mit der nächsten Gruppe an.
+
+## Dokumente
+
+[Datenschutzerklärung für Teilnehmende][1]
+
+[Datenschutzerklärung MeteoTracker englisch][2]
+
+[Datenschutzerklärung MeteoTracker deutsch][3]
+
+[Nutzungsvereinbarung MeteoTracker][4]
+
+[1]:{{ site.url }}/assets/files/Datenschutzerklärung.pdf
+[2]:{{ site.url }}/assets/files/Data_processing_consent_EN.pdf
+[3]:{{ site.url }}/assets/files/Data_processing_consent_DE.pdf
+[4]:{{ site.url }}/assets/files/Nutzungsvertrag_MeteoTracker.pdf
