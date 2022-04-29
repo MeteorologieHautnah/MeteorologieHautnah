@@ -25,7 +25,7 @@ Die Auswertung der Daten beginnt dann entweder direkt im Anschluss an die Messfa
 
 [Nutzungsvereinbarung MeteoTracker][4]
 
-[1]:{{ site.url }}/assets/files/Datenschutzerklärung.pdf
-[2]:{{ site.url }}/assets/files/Data_processing_consent_EN.pdf
-[3]:{{ site.url }}/assets/files/Data_processing_consent_DE.pdf
-[4]:{{ site.url }}/assets/files/Nutzungsvertrag_MeteoTracker.pdf
+[1]:{{ site.baseurl }}/assets/files/Datenschutzerklärung.pdf
+[2]:{{ site.baseurl }}/assets/files/Data_processing_consent_EN.pdf
+[3]:{{ site.baseurl }}/assets/files/Data_processing_consent_DE.pdf
+[4]:{{ site.baseurl }}/assets/files/Nutzungsvertrag_MeteoTracker.pdf

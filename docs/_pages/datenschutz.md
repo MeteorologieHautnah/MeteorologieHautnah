@@ -58,4 +58,4 @@ Beim http-Request werden neben Ihrer IP-Adresse und der angeforderten Seite auch
 
 Der Hoster speichert diese Informationen in Server-Logs, um den Betrieb zu überwachen, damit Störungen un Missbrauchsfälle schnell erkannt und behoben werden können.
 
-[1]:{{ site.url }}/assets/files/Datenschutzerklärung.pdf
+[1]:{{ site.baseurl }}/assets/files/Datenschutzerklärung.pdf
