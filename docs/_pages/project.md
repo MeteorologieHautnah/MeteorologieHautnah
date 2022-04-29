@@ -1,6 +1,6 @@
 ---
 title: "Das Projekt"
-layout: home
+layout: single
 permalink: /project
 ---
 
@@ -45,7 +45,7 @@ Abschlussveranstaltung
 
 [Datenschutzerklärung für Teilnehmende]({{ site.baseurl }}/assets/files/Datenschutzerklärung.pdf)
 
-[Datenschutzerklärung MeteoTracker englisch][({{ site.baseurl }}/assets/files/Data_processing_consent_EN.pdf)
+[Datenschutzerklärung MeteoTracker englisch]({{ site.baseurl }}/assets/files/Data_processing_consent_EN.pdf)
 
 [Datenschutzerklärung MeteoTracker deutsch]({{ site.baseurl }}/assets/files/Data_processing_consent_DE.pdf)
 

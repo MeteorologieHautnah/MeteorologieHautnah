@@ -1,9 +1,7 @@
 # main links
 main:
-  - title: "Home"
-    url: /home
   - title: "Blog"
-    url: /index
+    url: /blog
   - title: "Projekt"
     url: /project
   - title: "FAQ"
