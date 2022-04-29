@@ -1,6 +1,5 @@
 ---
 title: "Häufige Fragen"
-layout: home
 permalink: /faq
 ---
 
