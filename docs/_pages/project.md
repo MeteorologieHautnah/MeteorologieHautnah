@@ -43,6 +43,12 @@ Abschlussveranstaltung
 
 ## Dokumente
 
+[Eröffnungsveranstaltung 30. April, Komplett]({{ site.baseurl }}/assets/files/20220430_eröffnungsveranstaltung_meteohautnah.pdf)
+
+[Eröffnungsveranstaltung 30. April, Stadtklima]({{ site.baseurl }}/assets/files/20220430_Grundlagen_Stadtklima.pdf)
+
+[Schritt-für-Schritt-Anleitung MeteoTracker]({{ site.baseurl }}/assets/files/20220430_Anleitung_MeteoTracker.pdf)
+
 [Datenschutzerklärung für Teilnehmende]({{ site.baseurl }}/assets/files/Datenschutzerklärung.pdf)
 
 [Datenschutzerklärung MeteoTracker englisch]({{ site.baseurl }}/assets/files/Data_processing_consent_EN.pdf)
