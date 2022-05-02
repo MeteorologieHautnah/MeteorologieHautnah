@@ -43,6 +43,8 @@ Abschlussveranstaltung
 
 ## Dokumente
 
+[Handzettel]({{ site.baseurl }}/assets/files/Handzettel.pdf)
+
 [Eröffnungsveranstaltung 30. April, Komplett]({{ site.baseurl }}/assets/files/20220430_eröffnungsveranstaltung_meteohautnah.pdf)
 
 [Eröffnungsveranstaltung 30. April, Stadtklima]({{ site.baseurl }}/assets/files/20220430_Grundlagen_Stadtklima.pdf)
