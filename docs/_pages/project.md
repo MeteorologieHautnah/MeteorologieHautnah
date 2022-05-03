@@ -2,6 +2,8 @@
 title: "Das Projekt"
 layout: single
 permalink: /project
+redirect_from: 
+    - /home
 ---
 
 Bei unserem Projekt "Meteorologie hautnah" geht es zum einen darum mit Leipziger Pendlerinnen und Pendlern Wetterdaten zum Leipziger Stadtklima (Temperatur, Luftfeuchte und Druck) aufzuzeichnen und zum anderen darum den Teilnehmenden die wissenschaftliche Arbeitsmethode in interaktiven Workshops näherzubringen.

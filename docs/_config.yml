@@ -55,6 +55,7 @@ plugins:
   - jekyll-email-protect
   - jekyll-paginate
   - jekyll-gist
+  - jekyll-redirect-from
 
 #comments:
 #  provider: "utterances"
