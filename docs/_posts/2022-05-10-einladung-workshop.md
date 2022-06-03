@@ -12,7 +12,7 @@ Für die Teilnehmenden in der Mai Gruppe kommt nun der zweite Teil des Projektes
 
 Die Veranstaltung richtet sich in erste Linie natürlich an die Teilnehmenden in der Mai Gruppe. Nichtsdestotrotz laden wir auch andere Interessierte herzlich ein dabei zu sein und mitzudiskutieren oder einfach nur zu beobachten wie Wissenschaft Wissen schafft.
 
-Der Workshop findet im Seminarraum Arktis des Leipziger Instituts für Meteorologie im 5. Stock der Prager Str. 34 statt. Beginn ist um 10:00 Uhr und enden wollen wir mit einem kleinen Snack im angrenzenden Friedenspark um 12:00 Uhr. Zur Übersicht haben wir auch einen kurzen Ablaufplan erstellt:
+Der Workshop findet am 14. Mai im Seminarraum Arktis des Leipziger Instituts für Meteorologie im 5. Stock der Prager Str. 34 statt. Beginn ist um 10:00 Uhr und enden wollen wir mit einem kleinen Snack im angrenzenden Friedenspark um 12:00 Uhr. Zur Übersicht haben wir auch einen kurzen Ablaufplan erstellt:
 
 **10:00** Willkommen und Feedbackrunde  
 **10:15** Kurze Einführung  in die wissenschaftliche Methode  
