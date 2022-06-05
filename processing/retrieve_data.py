@@ -54,7 +54,12 @@ while number_of_points > 0:
     # read first line of json file to get number of points retrieved with curl
     with open(outfile, "r") as f:
         line = f.readline()
-        number_of_points = int(re.search(r"(\d+) (points)", line).group(1))
+        try:
+            number_of_points = int(re.search(r"(\d+) (points)", line).group(1))
+        except AttributeError:
+            logger.info("Did not download any points! Check scripts!")
+            os.remove(outfile)  # remove empty file
+            sys.exit(1)
     n += 1
 
 os.remove(outfile)  # remove last outfile
