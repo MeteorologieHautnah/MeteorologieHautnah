@@ -39,7 +39,7 @@ Wir möchten uns hier nochmal ganz ausdrücklich bei allen Teilnehmenden der Mai
 
 ![Karte von Leipzig mit Messpunkten aller MeteoTracker in Farbe]({{ site.baseurl }}/assets/images/20220601_alle_messungen_Mai.png)
 
-Nach der Feedbackrunde hat sich Oscar dann noch ein paar Messungen aus dem Mai genauer angeschaut. Neben den gemeinsamen Messfahrten auch den 18. Mai, ein sogenannter Strahlungstag. Darunter versteht man einen Tag, an dem die ganze Zeit die Sonne scheint und es nur sehr wenig Wind weht und es damit nur zu wenig Durchmischung der Luftmasse in der Stadt kommt. Die Messungen folgen dann den Tag über dem Temperaturverlauf der Messstation des Deutschen Wetterdienstes im eher schon ländlichen Holzhausen. Zum Abend hin sieht man dann aber die deutliche Überwärmung der Stadt gegenüber dem Umland. (Sobald wir alle Daten zu diesem Tag haben, aktualisieren wir die Darstellung.)
+Nach der Feedbackrunde hat sich Oscar dann noch ein paar Messungen aus dem Mai genauer angeschaut. Neben den gemeinsamen Messfahrten auch den 18. Mai, ein sogenannter Strahlungstag. Darunter versteht man einen Tag, an dem die ganze Zeit die Sonne scheint und nur sehr wenig Wind weht. Damit kommt es nur zu wenig Durchmischung der Luftmasse in der Stadt. Die Messungen folgen dann den Tag über dem Temperaturverlauf der Messstation des Deutschen Wetterdienstes im eher schon ländlichen Holzhausen. Zum Abend hin sieht man dann aber die deutliche Überwärmung der Stadt gegenüber dem Umland. (Sobald wir alle Daten zu diesem Tag haben, aktualisieren wir die Darstellung.)
 
 ![Darstellung des Temperaturverlaufs an der Messstation Holzhausen im Vergleich zu den Messungen der MeteoTracker]({{ site.baseurl }}/assets/images/20220518_temperaturverlauf.png)
 
