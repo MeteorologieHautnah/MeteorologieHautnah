@@ -43,7 +43,7 @@ outdir = f"/projekt_agmwend2/data_raw/meteorologie_hautnah_raw/{date_str}"
 make_dir(outdir)
 
 number_of_points = 1  # initialize while loop variable
-n = 1  # initialize count
+n = 0  # initialize count
 while number_of_points > 0:
     outfile = f"{outdir}/{date_str}_meteotracker_{n:02}.json"
     url = f"https://app.meteotracker.com/api/uni-leipzig/{date_str}T00:00:00Z/{n}"
