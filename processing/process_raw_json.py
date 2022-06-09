@@ -50,7 +50,7 @@ logger.info(f"Preprocessing {date_var}")
 
 date_str = dt.datetime.strptime(date_var, "%Y%m%d").strftime("%Y-%m-%d")
 indir = f"/projekt_agmwend2/data_raw/meteorologie_hautnah_raw/{date_str}"
-outdir = f"/projekt_agmwend/data/meteorologie_hautnah"
+outdir = f"/projekt_agmwend/data/meteorologie_hautnah/daily_csv"
 
 files = os.listdir(indir)  # list all files
 if len(files) > 1:
