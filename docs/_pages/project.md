@@ -29,8 +29,8 @@ Workshop mit Gruppe 1
 **~~28. Mai 2022~~ &rarr; 01. Juni 2022**  
 Abschlussworkshop mit Gruppe 1 und Übergabe an Gruppe 2
 
-**11. Juni 2022**  
-Workshop mit Gruppe 2
+**~~11. Juni 2022~~ &rarr; 15. Juni 2022**  
+Workshop mit Gruppe 2 (17 Uhr, Prager Straße 34, 5. Stock)
 
 **2. Juli 2022**  
 Abschlussworkshop mit Gruppe 2 und Übergabe an Gruppe 3
