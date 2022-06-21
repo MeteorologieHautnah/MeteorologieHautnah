@@ -37,7 +37,14 @@ Hierzu haben wir uns eine Messstrategie ausgedacht, die am besten am Abend eines
     </a>
 </figure>
 
-Die genauen Strecken, die abgefahren werden sollen, planen wir derzeit noch und verlinken sie dann demnächst hier.
+Die genauen Strecken, die abgefahren werden sollen, findet ihr hier:
+
+[Auwald Nahe Cossi](https://www.komoot.de/tour/814598573?ref=wtd)  
+[Deponie Küchenholz](https://www.komoot.de/tour/814596741?ref=wtd)  
+[Sachsenbrücke](https://www.komoot.de/tour/814589550?ref=wtd)  
+[Nahleberg](https://www.komoot.de/tour/814588307?ref=wtd)  
+[Rund Auensee Straße](https://www.komoot.de/tour/814585991?ref=wtd)  
+[Schleußiger Weg](https://www.komoot.de/tour/814584517?ref=wtd)  
 
 Nun gilt es noch einen passenden Tag für die Messfahrten zu finden. Dieser ist natürlich auch vom Wetter abhängig und laut der Vorhersage scheint Donnerstag, der 23. Juni ein guter Tag dafür zu sein. Die Idee ist, dass jede/r Teilnehmende eine oder mehrere der oben beschriebenen Querungen abfährt. Starten soll das ganze ab 17 Uhr. 
 
