@@ -26,7 +26,7 @@ Die einzelnen Touren -auch gerne zum Nachfahren- findet Ihr hier:
 - [Tour SüdWest](https://www.komoot.de/tour/769574391?share_token=aur7Gue4oIaLfxJIauWXrO6eNuqhmlsQniMaYeH5cjKsZUFyEU&ref=wtd)
 - [Tour West](https://www.komoot.de/tour/769589978?share_token=a0AcqBcxEQqcDz1FCWdtKg0mJUindjjrtHrawfHIvP74L9FzGC&ref=wtd)
 
-Im Endeffekt wurden dann die Touren NordOst am 24. Mai und SüdWest am 27. Mai gefahren. Ihr findet einige Darstellungen davon in unserem [Vortrag vom 1. Juni]({{ site.baseurl }}/assets/files/20220601_Uebergabe.pdf). Wir sind noch dabei die Datenbank zu sortieren, deswegen fehlen leider einige Fahrten. Zu den nächsten Workshops werden wir hierzu noch schönere Darstellungen liefern.
+Im Endeffekt wurden dann die Touren NordOst am 24. Mai und SüdWest am 27. Mai gefahren. Ihr findet einige Darstellungen davon in unserem [Vortrag vom 1. Juni]({{ site.baseurl }}/assets/files/20220601_erste_uebergabe.pdf). Wir sind noch dabei die Datenbank zu sortieren, deswegen fehlen leider einige Fahrten. Zu den nächsten Workshops werden wir hierzu noch schönere Darstellungen liefern.
 
 ## Erste Übergabeveranstaltung
 
