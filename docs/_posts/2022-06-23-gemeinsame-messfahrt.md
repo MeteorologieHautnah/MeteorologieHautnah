@@ -9,7 +9,7 @@ Es war ein perfekter Strahlungstag für unsere gemeinsame Messfahrt am 23. Juni 
 Hierzu haben wir einige Messstrecken geplant, die den Auwald im Norden, im Zentrum sowie im Süden kreuzen und auch die angrenzenden Siedlungsgebiete mit abdecken. Die Strecken findet ihr in unserem letzten [Beitrag]({% post_url 2022-06-15-zweiter-workshop %}).
 Neben den Kreuzungen sind wir auch entlang der Gewässer durch den Auwald von Nord nach Süd bzw. Süd nach Nord gefahren, um eine Vergleichsmessung zu erhalten, wie sich die Temperatur im Auwald selbst ändert.
 
-![Bild auf der Sachsenbrücke mit den Warming Stripes auf dem Boden und der Brüstung mit Geländer im Zentrum. Am rechten Bildrand sitz ein Mensch auf der Bank und es steht eine Kühlbox am Boden]({{ site.baseurl }}/assets/images/20220623_sachsenbrücke_02.jpg)
+![Bild auf der Sachsenbrücke mit den Warming Stripes auf dem Boden und der Brüstung mit Geländer im Zentrum. Am rechten Bildrand sitz ein Mensch auf der Bank und es steht eine Kühlbox am Boden.]({{ site.baseurl }}/assets/images/20220623_sachsenbrücke_02.jpg)
 
 Bei wunderschönem Wetter und tropischen Temperaturen haben wir uns dann gegen 17 Uhr an der Sachsenbrücke eingefunden und eine kleine Erfrischungs- und Verpflegungsstation aufgebaut. Schließlich sollten unsere fleißigen Studienteilnehmenden nicht dehydriert und ausgehungert zu Hause ankommen. 
 

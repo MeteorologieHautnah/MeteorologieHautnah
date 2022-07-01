@@ -24,6 +24,14 @@ else:
     file = [f for f in files if date in f][0]
     df = pd.read_csv(f"{data_path}/{file}")
 
+df.loc[:, "time"] = pd.to_datetime(df["time"])  # convert time column to type datetime
+
+# %% filter out values with speed below 10 km/h
+df = df[df.speed > 10]
+
+# %% select date range
+df = df[df.time.dt.month == 6]  # select June only
+
 # %% plot temperature on map and add a nice colorbar
 plt.rc("font", size=16)
 plot_df = df  # [::100]  # subsample dataframe if needed
@@ -35,8 +43,8 @@ ax.add_image(request, 12)
 scatter = ax.scatter(plot_df["lon"], plot_df["lat"], c=plot_df["air_temperature"], transform=ccrs.Geodetic(),
                      cmap="inferno")
 cbar = plt.colorbar(scatter, ax=ax, orientation="vertical", label="Temperatur (°C)")
-ax.set_title("Alle MeteoTracker Messpunkte - Mai 2022")
+ax.set_title("Alle MeteoTracker Messpunkte - Juni 2022")
 plt.tight_layout()
 # plt.show()
-plt.savefig(f"{plot_path}/alle_messungen_Mai.png", dpi=300, transparent=True)
+plt.savefig(f"{plot_path}/alle_messungen_Juni.png", dpi=300, transparent=True)
 plt.close()
