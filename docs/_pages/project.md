@@ -35,7 +35,7 @@ Workshop mit Gruppe 2 (17 Uhr, Prager Straße 34, 5. Stock)
 **2. Juli 2022**  
 Abschlussworkshop mit Gruppe 2 und Übergabe an Gruppe 3
 
-**16. Juli 2022**  
+**~~16. Juli 2022~~ &rarr; TBA**  
 Workshop mit Gruppe 3
 
 **30. Juli 2022**  
