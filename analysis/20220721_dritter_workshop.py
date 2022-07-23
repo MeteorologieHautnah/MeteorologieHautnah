@@ -121,20 +121,21 @@ plt.savefig(f"{plot_path}/20220718_F46077A2930C_2_karte.png", dpi=300, transpare
 plt.close()
 
 # %% plot time series over latitude of both runs
+plt.rc("font", size=16)
 plot_df1, plot_df2 = df1.iloc[50:-50], df2.iloc[50:-50]
 h.set_cb_friendly_colors()
 fig, ax = plt.subplots(figsize=(10, 6))
-ax.plot(plot_df1.lat, plot_df1["Temp[°C]"].values, label="Mittag", linewidth=3)
+ax.plot(plot_df1.lat, plot_df1["Temp[°C]"].values, label="Nachmittag", linewidth=3)
 ax.plot(plot_df2.lat, plot_df2["Temp[°C]"].values, label="Abend", linewidth=3)
 # h.set_xticks_and_xlabels(ax, (df2.time.iloc[-1] - df1.time.iloc[0]))
 ax.set_xlabel("Latitude (°)")
 ax.set_ylabel("Lufttemperatur (°C)")
-ax.set_title("")
+ax.set_title("Zwei Messfahrten entlang einer Nord-Süd Achse \ndurch die Leipziger Innenstadt vom 18. Juli 2022")
 ax.grid()
 ax.legend()
 plt.tight_layout()
 # plt.show()
-plt.savefig(f"{plot_path}/20220718_F46077A2930C_temp-lat_zeitreihe.png", dpi=100)
+plt.savefig(f"{plot_path}/20220718_F46077A2930C_temp-lat_zeitreihe.png", dpi=200)
 plt.close()
 
 # %% plot time series of both runs
@@ -195,7 +196,7 @@ else:
 df.loc[:, "time"] = pd.to_datetime(df["time"])  # convert time column to type datetime
 
 # dwd data
-dwd_df = station_temp("Holzhausen", pd.to_datetime("2022-07-19 00:00"), pd.to_datetime("2022-07-20 00:00"))
+# dwd_df = station_temp("Holzhausen", pd.to_datetime("2022-07-19 00:00"), pd.to_datetime("2022-07-20 00:00"))
 
 df = df[df.speed > 10]
 
@@ -230,16 +231,16 @@ for s, e in zip(starts, ends):
 # %% plot time series with maximum
 df = df.sort_values(by="time")
 fig, ax = plt.subplots(figsize=(10, 6))
-ax.plot(df.time, df.air_temperature, linewidth=4, label="MeteoTracker")
-ax.plot(df.time, df.T, linewidth=4, label="Holzhausen")
+ax.scatter(df.time, df.air_temperature, linewidth=4, label="MeteoTracker", color="#CC6677")
+# ax.plot(df.time, df.T, linewidth=4, label="Holzhausen")
 h.set_xticks_and_xlabels(ax, df.time.max() - df.time.min())
 ax.grid()
 max_temp = df[df.air_temperature == df.air_temperature.max()].iloc[0]
 ax.annotate(f"Maximum: {df.air_temperature.max()}", xy=(max_temp.time, max_temp.air_temperature),
             xytext=(20, 3), textcoords="offset points", arrowprops=dict(facecolor='black', arrowstyle="simple"))
-max_temp = df[df.T == df.T.max()].iloc[0]
-ax.annotate(f"Maximum: {df.T.max()}", xy=(max_temp.time, max_temp.T),
-            xytext=(20, 3), textcoords="offset points", arrowprops=dict(facecolor='black', arrowstyle="simple"))
+# max_temp = df[df.T == df.T.max()].iloc[0]
+# ax.annotate(f"Maximum: {df.T.max()}", xy=(max_temp.time, max_temp.T),
+#             xytext=(20, 3), textcoords="offset points", arrowprops=dict(facecolor='black', arrowstyle="simple"))
 ax.set_xlabel("Zeit (UTC)")
 ax.set_ylabel("Lufttemperatur (°C)")
 ax.set_title(f"Temperaturverlauf {df.time.min():%d Juli} - {df.time.max():%d Juli} 2022")

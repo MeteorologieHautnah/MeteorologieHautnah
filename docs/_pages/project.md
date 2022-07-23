@@ -6,7 +6,7 @@ redirect_from:
     - /home
 ---
 
-Bei unserem Projekt "Meteorologie hautnah" geht es zum einen darum mit Leipziger Pendlerinnen und Pendlern Wetterdaten zum Leipziger Stadtklima (Temperatur, Luftfeuchte und Druck) aufzuzeichnen und zum anderen darum den Teilnehmenden die wissenschaftliche Arbeitsmethode in interaktiven Workshops näherzubringen.
+Bei unserem Projekt "Meteorologie hautnah" geht es zum einen darum mit Leipziger Pendlerinnen und Pendlern im Sommer 2022 Wetterdaten zum Leipziger Stadtklima (Temperatur, Luftfeuchte und Druck) aufzuzeichnen und zum anderen darum den Teilnehmenden die wissenschaftliche Arbeitsmethode in interaktiven Workshops näherzubringen.
 
 ![Aufsicht auf einen MeteoTracker bzw. mobilen Messsensor]({{ site.baseurl }}/assets/images/mt_aufsicht.jpg "MeteoTracker")
 Den ersten Teil möchten wir mithilfe des [MeteoTrackers](https://meteotracker.com/en/home/) umsetzen, einem kleinen Sensor, der am Fahrrad oder Autodach befestigt werden kann und die eben genannten Parameter misst.
@@ -39,7 +39,7 @@ Abschlussworkshop mit Gruppe 2 und Übergabe an Gruppe 3
 Workshop mit Gruppe 3 (18:30 Uhr, Prager Straße 34, 5. Stock)
 
 **30. Juli 2022**  
-Abschlussworkshop mit Gruppe 3
+Abschlussworkshop mit Gruppe 3 (9:30 Uhr)
 
 **September/Oktober**  
 Abschlussveranstaltung
@@ -57,6 +57,8 @@ Abschlussveranstaltung
 [2. Workshop]({{ site.baseurl }}/assets/files/20220615_zweiter_workshop.pdf)
 
 [2. Übergabeveranstaltung]({{ site.baseurl }}/assets/files/20220702_zweite_uebergabe.pdf)
+
+[3. Workshop]({{ site.baerurl }}/assets/files/20220721_workshop.pdf)
 
 ## Dokumente
 
