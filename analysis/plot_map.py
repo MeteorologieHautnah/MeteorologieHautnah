@@ -30,7 +30,7 @@ df.loc[:, "time"] = pd.to_datetime(df["time"])  # convert time column to type da
 df = df[df.speed > 10]
 
 # %% select date range
-df = df[df.time.dt.month == 6]  # select June only
+df = df[df.time.dt.month == 7]  # select June only
 
 # %% plot temperature on map and add a nice colorbar
 plt.rc("font", size=16)
@@ -43,8 +43,8 @@ ax.add_image(request, 12)
 scatter = ax.scatter(plot_df["lon"], plot_df["lat"], c=plot_df["air_temperature"], transform=ccrs.Geodetic(),
                      cmap="inferno")
 cbar = plt.colorbar(scatter, ax=ax, orientation="vertical", label="Temperatur (°C)")
-ax.set_title("Alle MeteoTracker Messpunkte - Juni 2022")
+ax.set_title("Alle MeteoTracker Messpunkte - Juli 2022")
 plt.tight_layout()
 # plt.show()
-plt.savefig(f"{plot_path}/alle_messungen_Juni.png", dpi=300, transparent=True)
+plt.savefig(f"{plot_path}/alle_messungen_juli.png", dpi=300, transparent=True)
 plt.close()
