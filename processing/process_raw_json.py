@@ -32,6 +32,7 @@ def preprocess_json(file: str) -> pd.DataFrame:
 
 # setup file logger
 logdir = "/projekt_agmwend/home_rad/jroettenbacher/meteo_hautnah/logs"
+# logdir = "C:/Users/Johannes/Documents/MeteorologieHautnah/MeteorologieHautnah/Daten/logs"  # for local processing
 logfile = f"{logdir}/process_raw_json.log"
 logger = logging.getLogger(__name__)
 handler = logging.FileHandler(logfile)
@@ -46,11 +47,16 @@ date_var = yesterday.strftime("%Y%m%d")
 # read in command line args to overwrite standard options
 args = read_command_line_args()
 date_var = args["date"] if "date" in args else date_var
+# loop over all dates
+# for date_var in [d.strftime("%Y%m%d") for d in pd.date_range("2022-05-01", "2022-05-31")]:
 logger.info(f"Preprocessing {date_var}")
 
 date_str = dt.datetime.strptime(date_var, "%Y%m%d").strftime("%Y-%m-%d")
 indir = f"/projekt_agmwend2/data_raw/meteorologie_hautnah_raw/{date_str}"
 outdir = f"/projekt_agmwend/data/meteorologie_hautnah/daily_csv"
+# for local processing
+# indir = f"C:/Users/Johannes/Documents/MeteorologieHautnah/MeteorologieHautnah/Daten/raw/{date_str}"
+# outdir = f"C:/Users/Johannes/Documents/MeteorologieHautnah/MeteorologieHautnah/Daten/processed"
 
 files = os.listdir(indir)  # list all files
 if len(files) > 1:
