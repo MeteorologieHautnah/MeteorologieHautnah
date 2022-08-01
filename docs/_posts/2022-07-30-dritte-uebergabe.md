@@ -11,18 +11,18 @@ Dann kann es ja losgehen. Auf in die letzte Übergabeveranstaltung. Wie immer st
 
 Wie bei der letzten Übergabeveranstaltung haben wir ein paar Statistiken vorbereitet. Die zeitliche Verteilung der Messwerte, von denen wir diesmal über 300,000 haben, zeigt diesmal einen sehr interessanten Abfall um 11 UTC, also 13 Uhr Mittags. Anscheinend waren die Juli-Teilnehmenden hier entweder auf der Arbeit oder in der Mittagspause. Auch eine Nachtfahrt um 2 Uhr war diesmal dabei. 
 
-![Balkendiagramm mit der Anzahl der Messwerte auf der y-Achse und der Uhrzeit in stündlichen Schritten auf der x-Achse.]({{ site.baseurl }}/assets/images/20220731_juli_messzeitverteilung.png)
+![Balkendiagramm mit der Anzahl der Messwerte auf der y-Achse und der Uhrzeit in stündlichen Schritten auf der x-Achse.]({{ site.baseurl }}/assets/images/20220730_juli_messzeitverteilung.png)
 
 An der Temperaturverteilung über den Tag sieht man diesmal einen interessanten Anstieg in den Abendstunden. Wenn man allerdings auf die Anzahl der Messwerte zu diesen Uhrzeiten schaut, sieht man, dass es eher wenige sind. Es liegt also nahe, dass es sich hier um gezielte Messfahrten in den Abendstunden der sehr heißen Tage vor einer Woche handelt. Dementsprechend sind die erhöhten Temperaturen eher als Anomalie zu betrachten und nicht etwa als etwas Stadtklima typisches.
 
 ![Balkendiagramm mit der Anzahl der Messwerte auf der y-Achse und der Uhrzeit in stündlichen Schritten auf der x-Achse.]({{ site.baseurl }}/assets/images/20220730_juli_monatliche_stündliche_mittlere_temperatur.png)
 
 Auch solche Metaanalysen versuchen wir mit den Teilnehmenden durchzugehen. Denn nicht alles was man mit Messungen und Statistiken erzeugt hat auch einen physikalischen Hintergrund. Nicht umsonst gibt es unter Statistikern den berühmten Spruch:“Traue keiner Statistik, die du nicht selbst gefälscht hast.“ Eine gesunde Skepsis ist das tägliche Brot von Wissenschaftlern.
-Die [Präsentation]({{ site.baseurl }}/assets/files/20220721_workshop.pdf) findet ihr wie immer auf der [Projektseite]({{ 'project' | relative_url }}).
+Die [Präsentation]({{ site.baseurl }}/assets/files/20220730_uebergabe.pdf) findet ihr wie immer auf der [Projektseite]({{ 'project' | relative_url }}).
 
 ## Gemeinsame Messfahrt
 
-Am Donnerstag, dem 28. Juli, haben wir uns mit insgesamt sieben Teilnehmenden abends um 20:00 Uhr zu einer gemeinsamen Messfahrt getroffen. Unser Ziel war es den Temperatureffekt von Parkanlagen genauer zu untersuchen. Dazu haben wir uns in drei Gruppen aufgeteilt. Eine Gruppe ist dann am Park, die andere im Park und die Dritte im angrenzenden Viertel parallel zum Park gefahren. Den Plan hatten wir beim letzten [Workshop]({{ '2022-07-21-dritter-workshop' | relative_url }}) erarbeitet.
+Am Donnerstag, dem 28. Juli, haben wir uns mit insgesamt sieben Teilnehmenden abends um 20:00 Uhr zu einer gemeinsamen Messfahrt getroffen. Unser Ziel war es den Temperatureffekt von Parkanlagen genauer zu untersuchen. Dazu haben wir uns in drei Gruppen aufgeteilt. Eine Gruppe ist dann am Park, die andere im Park und die Dritte im angrenzenden Viertel parallel zum Park gefahren. Den Plan hatten wir beim letzten [Workshop]({% post_url 2022-07-21-dritter-workshop %}) erarbeitet.
 
 Zwischen den Parks waren wir dann immer zusammen unterwegs und haben so Vergleichswerte erhoben. Diese können wir nun verwenden, um zu untersuchen, wie stabil die Messungen der MeteoTracker sind und ob diese miteinander vergleichbar sind. In der Theorie sollte ein Messergebnis nämlich nicht von der Messmethode oder dem Messgerät abhängen. Unsicherheiten gibt es jedoch immer und so sind solche Vergleichsmessungen goldwert, um diese Unsicherheiten zu bestimmen. Denn wer nichts über seine Unsicherheiten weiß, der weiß auch nichts über seine Messungen. 
 

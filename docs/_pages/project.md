@@ -58,9 +58,9 @@ Abschlussveranstaltung am Campus Augustusplatz
 
 [2. Übergabeveranstaltung]({{ site.baseurl }}/assets/files/20220702_zweite_uebergabe.pdf)
 
-[3. Workshop]({{ site.baerurl }}/assets/files/20220721_workshop.pdf)
+[3. Workshop]({{ site.baserurl }}/assets/files/20220721_workshop.pdf)
 
-[3. Übergabeveranstaltung]({{ site.baerurl }}/assets/files/20220730_uebergabe.pdf)
+[3. Übergabeveranstaltung]({{ site.baserurl }}/assets/files/20220730_uebergabe.pdf)
 
 ## Dokumente
 
