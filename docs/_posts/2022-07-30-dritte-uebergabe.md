@@ -22,7 +22,7 @@ Die [Präsentation]({{ site.baseurl }}/assets/files/20220730_uebergabe.pdf) find
 
 ## Gemeinsame Messfahrt
 
-Am Donnerstag, dem 28. Juli, haben wir uns mit insgesamt sieben Teilnehmenden abends um 20:00 Uhr zu einer gemeinsamen Messfahrt getroffen. Unser Ziel war es den Temperatureffekt von Parkanlagen genauer zu untersuchen. Dazu haben wir uns in drei Gruppen aufgeteilt. Eine Gruppe ist dann am Park, die andere im Park und die Dritte im angrenzenden Viertel parallel zum Park gefahren. Den Plan hatten wir beim letzten [Workshop]({% post_url 2022-07-21-dritter-workshop %}) erarbeitet.
+Am Donnerstag, dem 28. Juli, haben wir uns mit insgesamt sieben Teilnehmenden abends um 20:00 Uhr zu einer gemeinsamen Messfahrt getroffen. Unser Ziel war es den Temperatureffekt von Parkanlagen genauer zu untersuchen. Dazu haben wir uns in drei Gruppen aufgeteilt. Eine Gruppe ist dann am Park, die andere im Park und die Dritte im angrenzenden Viertel parallel zum Park gefahren. Den Plan hatten wir beim letzten [Workshop]({{ site.baseurl }}\{% post_url 2022-07-21-dritter-workshop %}) erarbeitet.
 
 Zwischen den Parks waren wir dann immer zusammen unterwegs und haben so Vergleichswerte erhoben. Diese können wir nun verwenden, um zu untersuchen, wie stabil die Messungen der MeteoTracker sind und ob diese miteinander vergleichbar sind. In der Theorie sollte ein Messergebnis nämlich nicht von der Messmethode oder dem Messgerät abhängen. Unsicherheiten gibt es jedoch immer und so sind solche Vergleichsmessungen goldwert, um diese Unsicherheiten zu bestimmen. Denn wer nichts über seine Unsicherheiten weiß, der weiß auch nichts über seine Messungen. 
 
