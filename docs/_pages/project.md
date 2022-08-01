@@ -39,10 +39,10 @@ Abschlussworkshop mit Gruppe 2 und Übergabe an Gruppe 3
 Workshop mit Gruppe 3 (18:30 Uhr, Prager Straße 34, 5. Stock)
 
 **30. Juli 2022**  
-Abschlussworkshop mit Gruppe 3 (9:30 Uhr)
+Abschlussworkshop mit Gruppe 3 (9:30 Uhr, Prager Straße 34, 5. Stock)
 
-**September/Oktober**  
-Abschlussveranstaltung
+**19. Oktober 17:00 Uhr**  
+Abschlussveranstaltung am Campus Augustusplatz
 
 ## Präsentationen
 
@@ -59,6 +59,8 @@ Abschlussveranstaltung
 [2. Übergabeveranstaltung]({{ site.baseurl }}/assets/files/20220702_zweite_uebergabe.pdf)
 
 [3. Workshop]({{ site.baerurl }}/assets/files/20220721_workshop.pdf)
+
+[3. Übergabeveranstaltung]({{ site.baerurl }}/assets/files/20220730_uebergabe.pdf)
 
 ## Dokumente
 
