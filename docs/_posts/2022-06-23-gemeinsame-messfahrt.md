@@ -6,7 +6,7 @@ author: Johannes
 
 Es war ein perfekter Strahlungstag für unsere gemeinsame Messfahrt am 23. Juni 2022. Den ganzen Tag beehrte uns die Sonne mit ihren Strahlen und bis in die späten Abendstunden war auch der Wind nur mäßig. Perfekte Bedingungen für eine gemeinsame Messfahrt, um unsere Fragestellung zu beantworten: Wie beeinflusst der Auwald das Auskühlungsverhalten der angrenzenden Stadtteile?
 
-Hierzu haben wir einige Messstrecken geplant, die den Auwald im Norden, im Zentrum sowie im Süden kreuzen und auch die angrenzenden Siedlungsgebiete mit abdecken. Die Strecken findet ihr in unserem letzten [Beitrag]({% post_url 2022-06-15-zweiter-workshop %}).
+Hierzu haben wir einige Messstrecken geplant, die den Auwald im Norden, im Zentrum sowie im Süden kreuzen und auch die angrenzenden Siedlungsgebiete mit abdecken. Die Strecken findet ihr in unserem letzten [Beitrag]({{ site.baseurl }}\{% post_url 2022-06-15-zweiter-workshop %}).
 Neben den Kreuzungen sind wir auch entlang der Gewässer durch den Auwald von Nord nach Süd bzw. Süd nach Nord gefahren, um eine Vergleichsmessung zu erhalten, wie sich die Temperatur im Auwald selbst ändert.
 
 ![Bild auf der Sachsenbrücke mit den Warming Stripes auf dem Boden und der Brüstung mit Geländer im Zentrum. Am rechten Bildrand sitz ein Mensch auf der Bank und es steht eine Kühlbox am Boden.]({{ site.baseurl }}/assets/images/20220623_sachsenbrücke_02.jpg)
