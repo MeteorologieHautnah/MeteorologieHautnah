@@ -4,8 +4,8 @@ layout: single
 permalink: /stadtradeln
 ---
 
-Vielen Dank für dein Interesse an unserem Citizen Science Projekt "Meteorologie hautnah" während des Stadtradelns mitzuwirken.
-Hier findest du alle wichtigen Infos, Dokumente und Hintergründe zur Teilnahme.
+Vielen Dank, dass du an unserem Citizen Science Projekt "Meteorologie hautnah" während des Stadtradelns mitwirken willst!
+Hier findest du alle wichtigen Informationen, Dokumente und Hintergründe zur Teilnahme.
 
 ![Aufsicht auf einen MeteoTracker bzw. mobilen Messsensor]({{ site.baseurl }}/assets/images/mt_aufsicht.jpg "MeteoTracker")
 

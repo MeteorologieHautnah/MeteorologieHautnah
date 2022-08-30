@@ -4,6 +4,8 @@ main:
     url: /blog
   - title: "Projekt"
     url: /project
+  - title: "Stadtradeln"
+    url: /stadtradeln
   - title: "FAQ"
     url: /faq
   - title: "Über uns"
