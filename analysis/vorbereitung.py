@@ -25,11 +25,13 @@ if __name__ == '__main__':
     # print(df_new[['time', 'device_id', 'session_id']])
 
     # %% create session id for whole dataset and write to new csv file
+    df = mh.read_data(data_path, "all", speedfilter=0)
+    df = mh.create_session_id(df)
+    date_str = df.time.dt.strftime("%Y-%m-%d")
+
     for d in tqdm(dates):
-        try:
-            df = mh.read_data(data_path, d, speedfilter=0)
-        except IndexError:
-            print(f"No file found for {d}")
-            continue  # Probably no file for this date
-        df = mh.create_session_id(df)
-        df.to_csv(f"{output_path}/{d}_meteotracker.csv", index=False)
+        df_out = df[d == date_str]
+        df_out.to_csv(f"{output_path}/{d}_meteotracker.csv", index=False)
+
+
+
