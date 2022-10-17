@@ -17,7 +17,8 @@ if __name__ == '__main__':
     output_path = f"{base_dir}/Daten/v1.0"
     plot_path = f"{base_dir}/Daten/plots/"
     date = "2022-05-03"  # "2022-05-18"  # yyyy-mm-dd or all
-    dates = list(pd.date_range("2022-05-01", "2022-10-13").strftime("%Y-%m-%d"))
+    dates = list(pd.date_range("2022-05-01", "2022-10-17").strftime("%Y-%m-%d"))  # which dates to save
+
     # %% read in data, create session id(test for one date)
     # df = mh.read_data(data_path, date, speedfilter=0)
     # print(df)
@@ -27,7 +28,11 @@ if __name__ == '__main__':
     # %% create session id for whole dataset and write to new csv file
     df = mh.read_data(data_path, "all", speedfilter=0)
     df = mh.create_session_id(df)
-    date_str = df.time.dt.strftime("%Y-%m-%d")
+    # drop sessions which only consist of one row/entry
+    df = mh.drop_short_sessions(df)
+    # create new session ids after dropping sessions
+    df = mh.create_session_id(df)
+    date_str = df.time.dt.strftime("%Y-%m-%d")  # create series of dates for writing to csv files
 
     for d in tqdm(dates):
         df_out = df[d == date_str]

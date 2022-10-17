@@ -69,7 +69,7 @@ def create_session_id(df: pd.DataFrame, delta_t_min: float = 300) -> pd.DataFram
             session_id += 1
 
         df_out = pd.concat([df_out, df_tmp])
-        df_out.reset_index(drop=True, inplace=True)
+    df_out.reset_index(drop=True, inplace=True)
 
     return df_out
 
@@ -105,3 +105,23 @@ def station_temp(name, start_date, end_date):
     df_out["Td"] = df_out["Td"] - 273.15
 
     return df_out
+
+
+def session_change(s):
+    return s.iloc[-1] - s.iloc[0]
+
+
+def drop_short_sessions(df):
+    """
+    Drop sessions from data frame which only consist of one measurement. Can be due to speed filter on read in.
+    Args:
+        df: Data Frame as returned by :py:mod:`meteohautnah.read_data`
+
+    Returns: Data Frame with one row sessions dropped
+
+    """
+    session_stat = df.groupby("session_id").agg(dict(time=session_change))
+    sid_to_drop = list(session_stat[session_stat.time == pd.Timedelta(0, unit="second")].index)
+    df = df[~df.session_id.isin(sid_to_drop)].copy()
+
+    return df
