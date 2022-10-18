@@ -5,57 +5,38 @@
 *author: Janosch Walde
 """
 
-import os
+import meteohautnah.meteohautnah as mh
 import pandas as pd
-import pytz
-
-# %% define paths
-data_path = "/home/janosch/Dokumente/MeteorologieHautnah/Daten/processed/"
-plot_path = "/home/janosch/Dokumente/MeteorologieHautnah/Daten/plots/"
-date = "2022-05-18"  # "2022-05-18"  # yyyy-mm-dd or all
-files = os.listdir(data_path)
-
-
-def read_data(path, dates: str):
-    if dates == "all":
-        df = pd.concat([pd.read_csv(f"{path}/{file}") for file in files], ignore_index=True)
-    else:
-        file = [f for f in files if date in f][0]
-        df = pd.read_csv(f"{data_path}/{file}")
-
-    # %% filter out values with speed below 10 km/h
-    df = df[df.speed > 10]
-
-    # %% Convert time to datetime and to European timezone
-    df.loc[:, "time"] = pd.to_datetime(df["time"])  # convert time column to type datetime#
-    my_timezone = pytz.timezone('Europe/Berlin')
-    df['time'] = df['time'].dt.tz_convert(my_timezone)
-
-    return df
-
-
-def create_session_id(df):
-    session_id = 0
-    df.sort_values(["device_id", "time"],
-                   ascending=True,
-                   inplace=True,)
-    dev_id = df.device_id[0]
-    t = df.iloc[0, 4]
-    df['session_id'] = None
-    for i in range(len(df)):
-        delta_t = df.iloc[i, 4] - t
-        delta_in_s = delta_t.total_seconds()
-        if df.iloc[i, 8] == dev_id and delta_in_s <= 300:  # gleiches Gerät und Zeitunterschied kleiner als 5 min
-            df.iloc[i, 12] = session_id
-            t = df.iloc[i, 4]
-        else:
-            session_id += 1
-            df.iloc[i, 12] = session_id
-            t = df.iloc[i, 4]
-
+from tqdm import tqdm
 
 if __name__ == '__main__':
-    df = read_data(data_path, date)
-    print(df)
-    create_session_id(df)
-    print(df[['time', 'device_id', 'session_id']])
+    # %% define paths
+    base_dir = "C:/Users/Johannes/Documents/MeteorologieHautnah/MeteorologieHautnah"
+    # base_dir = "/home/janosch/Dokumente/MeteorologieHautnah"  # Janosch
+    data_path = f"{base_dir}/Daten/processed/"
+    output_path = f"{base_dir}/Daten/v1.0"
+    plot_path = f"{base_dir}/Daten/plots/"
+    date = "2022-05-03"  # "2022-05-18"  # yyyy-mm-dd or all
+    dates = list(pd.date_range("2022-05-01", "2022-10-17").strftime("%Y-%m-%d"))  # which dates to save
+
+    # %% read in data, create session id(test for one date)
+    # df = mh.read_data(data_path, date, speedfilter=0)
+    # print(df)
+    # df_new = mh.create_session_id(df)
+    # print(df_new[['time', 'device_id', 'session_id']])
+
+    # %% create session id for whole dataset and write to new csv file
+    df = mh.read_data(data_path, "all", speedfilter=0)
+    df = mh.create_session_id(df)
+    # drop sessions which only consist of one row/entry
+    df = mh.drop_short_sessions(df)
+    # create new session ids after dropping sessions
+    df = mh.create_session_id(df)
+    date_str = df.time.dt.strftime("%Y-%m-%d")  # create series of dates for writing to csv files
+
+    for d in tqdm(dates):
+        df_out = df[d == date_str]
+        df_out.to_csv(f"{output_path}/{d}_meteotracker.csv", index=False)
+
+
+
