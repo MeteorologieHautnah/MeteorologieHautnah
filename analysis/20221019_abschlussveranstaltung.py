@@ -33,12 +33,10 @@ date = "all"  # "2022-05-18"  # yyyy-mm-dd or all
 # %% read in data
 df = mh.read_data(data_path, date, speedfilter=10)
 df.time_diff = pd.to_timedelta(df.time_diff)
-# dwd data
-# dwd_df = mh.station_temp("Holzhausen", pd.to_datetime("2022-07-01 00:00"), pd.to_datetime("2022-07-31 00:00"))
 
 # %% calculate general dataset statistics
 print(f"Number of Measurements between {df.time.iloc[0]:%Y-%m-%d} - {df.time.iloc[-1]:%Y-%m-%d}: {len(df)}")
-print(f"Number of Sessions between {df.time.iloc[0]:%Y-%m-%d} - {df.time.iloc[-1]:%Y-%m-%d}: {df.session_id.max()}")
+print(f"Number of Sessions between {df.time.iloc[0]:%Y-%m-%d} - {df.time.iloc[-1]:%Y-%m-%d}: {len(df.session_id.unique())}")
 
 # %% session statistics
 df = mh.drop_short_sessions(df)  # drop sessions with only one row left due to speed filter in read in
@@ -51,8 +49,6 @@ session_stat = df.groupby("session_id").agg(dict(time=[mh.session_change, "first
                                                  humidex=[mh.session_change, np.min, np.max, np.mean]))
 print(f"Longest session duration: ID: {session_stat.iloc[:, 0].argmax()}, {session_stat.iloc[:, 0].max()}")
 print(f"Mean session duration: {session_stat.iloc[:, 0].mean()}")
-session_stat.iloc[2705]
-
 
 # %% select date range
 # df = df[df.time.dt.month == 7]  # select July only
@@ -80,8 +76,14 @@ plt.close()
 # %% get time distribution
 plt.rc("font", size=16)
 fig, ax = plt.subplots(figsize=(10, 6))
-df.time.dt.hour.hist(bins=range(0, 25), color="#44AA99",ax=ax)
+ax.hist(df.time.dt.hour, bins=range(0, 25), color="#44AA99")
+for rect in ax.patches:
+    height = rect.get_height()
+    if height < 20000:
+        ax.annotate(f'{int(height)/1000:.1f} K', xy=(rect.get_x()+rect.get_width()/2, height),
+                    xytext=(0, 5), textcoords='offset points', ha='center', va='bottom', rotation=90)
 ax.set_xticks(range(25))
+ax.grid()
 ax.set_xlabel("Lokale Uhrzeit (Stunde)")
 ax.set_ylabel("Anzahl Messwerte (Tausend)")
 ax.yaxis.set_major_formatter(FuncFormatter(thousands))
@@ -97,7 +99,7 @@ plot_df = df
 # map
 request = cimgt.OSM()
 fig, ax = plt.subplots(figsize=(8, 8.5), subplot_kw=dict(projection=request.crs))
-extent = [12.2, 12.55, 51.16, 51.45] # (xmin, xmax, ymin, ymax)
+extent = [12.2, 12.55, 51.16, 51.45]  # (xmin, xmax, ymin, ymax)
 ax.set_extent(extent)
 ax.add_image(request, 11)
 scatter = ax.scatter(plot_df["lon"], plot_df["lat"], c=plot_df["air_temperature"], transform=ccrs.Geodetic(),
