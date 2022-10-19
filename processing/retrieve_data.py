@@ -37,7 +37,7 @@ date_var = args["date"] if "date" in args else date_var
 # get MeteoTracker Token from environment variables
 mttoken = os.environ.get("mttoken")
 # loop over all dates
-# for date_var in tqdm([d.strftime("%Y%m%d") for d in pd.date_range("2022-06-07", "2022-08-21")]):
+# for date_var in tqdm([d.strftime("%Y%m%d") for d in pd.date_range("2022-05-01", "2022-10-17")]):
 logger.info(f"-------------------------------------------------------------------------------------------------------\n"
             f"Working on {date_var}\n\n")
 

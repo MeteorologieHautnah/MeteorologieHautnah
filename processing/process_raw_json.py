@@ -49,7 +49,7 @@ date_var = yesterday.strftime("%Y%m%d")
 args = read_command_line_args()
 date_var = args["date"] if "date" in args else date_var
 # loop over all dates
-# for date_var in tqdm([d.strftime("%Y%m%d") for d in pd.date_range("2022-05-01", "2022-08-21")]):
+# for date_var in tqdm([d.strftime("%Y%m%d") for d in pd.date_range("2022-05-01", "2022-10-17")]):
 logger.info(f"Preprocessing {date_var}")
 
 date_str = dt.datetime.strptime(date_var, "%Y%m%d").strftime("%Y-%m-%d")
