@@ -11,6 +11,7 @@ import cartopy.crs as ccrs
 import cartopy.io.img_tiles as cimgt
 import numpy as np
 from meteohautnah import meteohautnah as mh
+import cmasher as cm
 
 
 def to_nearest(num, decimal):
@@ -18,8 +19,9 @@ def to_nearest(num, decimal):
 
 
 # %% define paths
-data_path = "/home/janosch/Dokumente/MeteorologieHautnah/Daten/processed/"
-plot_path = "/home/janosch/Dokumente/MeteorologieHautnah/Daten/plots/"
+base_dir = "C:/Users/Johannes/Documents/MeteorologieHautnah/MeteorologieHautnah"
+data_path = f"{base_dir}/Daten/v1.0"
+plot_path = f"{base_dir}/Daten/plots/Vorbereitungen_abschluss-VA"
 date = "all"  # "2022-05-18"  # yyyy-mm-dd or all
 files = os.listdir(data_path)
 
@@ -36,50 +38,51 @@ df = mh.read_data(data_path, "all", 10)
 mp_lon = 12.37534
 mp_lat = 51.34038
 # insert differenz of coordinates to midpoint
-df['lon_diff'] = df.lon - mp_lon
-df['lat_diff'] = df.lat - mp_lat
-# round differenz to nearest multiple of 4 with 3 digits precision #400
+df['lon_diff'] = df.lon.astype(float) - mp_lon
+df['lat_diff'] = df.lat.astype(float) - mp_lat
+# round differenz to the nearest multiple of 4 with 3 digits precision #400
 df['group_lon'] = to_nearest(df.lon_diff + mp_lon, 4000)
 df['group_lat'] = to_nearest(df.lat_diff + mp_lat, 4000)
 # make new df with midpoints of each cell and number of points in it
 lons = df.group_lon.unique()
 lats = df.group_lat.unique()
 
-
 # %% Variante 1: Anzahl an nächstem Punkt
 df_verteilung = df.groupby(['group_lon', 'group_lat'], as_index=False).agg(dict(air_temperature='count'))
 df_verteilung.rename(columns={'air_temperature': 'points', 'group_lon': 'lon', 'group_lat': 'lat'}, inplace=True)
 
 # %% plot temperature on map and add a nice colourbar
+cmap = cm.get_sub_cmap(cm.ember, 0.25, 1)
 plt.rc("font", size=16)
 plot_df = df_verteilung  # [::100]  # subsample dataframe if needed
 request = cimgt.OSM()
-fig, ax = plt.subplots(figsize=(8, 8.5), subplot_kw=dict(projection=request.crs))
+fig, ax = plt.subplots(figsize=(8, 6.5), subplot_kw=dict(projection=request.crs))
 extent = [12.25, 12.5, 51.27, 51.42]  # (xmin, xmax, ymin, ymax)
 ax.set_extent(extent)
 ax.add_image(request, 12)
 scatter = ax.scatter(plot_df["lon"], plot_df["lat"], c=plot_df["points"], transform=ccrs.Geodetic(), s=1,
-                     cmap="inferno")
-cbar = plt.colorbar(scatter, ax=ax, orientation="vertical", label="Anzahl an Messpunkten")
+                     cmap=cmap, vmax=plot_df["points"].quantile(0.95))
+cbar = plt.colorbar(scatter, ax=ax, orientation="vertical", label="Anzahl an Messpunkten", extend="max")
 ax.set_title("Heatmap MeteoTracker Messpunkte")
 plt.tight_layout()
+plt.savefig(f"{plot_path}/heatmap_v3.png", dpi=300, transparent=True)
 plt.show()
-plt.savefig(f"{plot_path}/heatmap_v1.png", dpi=300, transparent=True)
 plt.close()
-
 
 # %% Variante 2: Heatmap
 
 extent = [(12.27, 12.48), (51.27, 51.42)]  # (xmin, xmax, ymin, ymax) andere Karten:[(12.25, 12.5), (51.27, 51.42)]
 request = cimgt.OSM()
-
+cmap = cm.get_sub_cmap(cm.ember, 0.25, 1)
+cmap.set_under("white", alpha=0)
 # plt.rcParams["figure.figsize"] = (8, 8.5)  # all plots with same dimensions
 plt.rc("font", size=16)
-a = plt.hist2d(df.lon, df.lat, bins=(500, 500), cmap="inferno", range=extent)  # generate Heatmap
-plt.title('Heatmap aller Messpunkte')
-plt.colorbar(label="Anzahl an Messpunkten")
+fig, ax = plt.subplots(figsize=(8, 6.5))
+a = ax.hist2d(df.lon, df.lat, bins=(500, 500), cmin=1, cmap=cmap, range=extent, vmax=55)  # generate Heatmap
+ax.set_title('Heatmap aller Messpunkte')
+plt.colorbar(a[3], label="Anzahl an Messpunkten", extend="max")
 plt.axis('off')
 plt.tight_layout()
-plt.show()
 plt.savefig(f"{plot_path}/heatmap_v2.png", dpi=300, transparent=True)
+plt.show()
 plt.close()
