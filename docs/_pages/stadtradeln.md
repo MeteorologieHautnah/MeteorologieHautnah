@@ -5,7 +5,7 @@ permalink: /stadtradeln
 ---
 
 Vielen Dank, dass du an unserem Citizen Science Projekt "Meteorologie hautnah" während des Stadtradelns mitwirken willst!
-Hier findest du alle wichtigen Informationen, Dokumente und Hintergründe zur Teilnahme.
+Hier findest du alle wichtigen Informationen, Dokumente und Hintergründe zur Teilnahme. Der Projektzeitraum für 2022 ist leider schon vorbei. Bei Fragen schreib uns gerne eine E-Mail an: meteorologie.hautnah@uni-leipzig.de
 
 ![Aufsicht auf einen MeteoTracker bzw. mobilen Messsensor]({{ site.baseurl }}/assets/images/mt_aufsicht.jpg "MeteoTracker")
 

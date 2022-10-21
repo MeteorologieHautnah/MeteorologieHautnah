@@ -62,6 +62,12 @@ Abschlussveranstaltung am Campus Augustusplatz
 
 [3. Übergabeveranstaltung]({{ site.baserurl }}/assets/files/20220730_uebergabe.pdf)
 
+[Abschlussveranstaltung 19. Oktober, Meteorologie hautnah]({{ site.baseurl }}/assets/files/20221019_Meteorologie_hautnah_Abschluss.pdf)
+
+[Abschlussveranstaltung 19. Oktober, Stadt Leipzig]({{ site.baseurl }}/assets/files/20221018_abschlussveranstaltung_meteohautnah.pdf)
+
+[Abschlussveranstaltung 19. Oktober, cityClim]({{ site.baseurl }}/assets/files/CityClim4meteorologie-hautnah.pdf)
+
 ## Dokumente
 
 [Handzettel]({{ site.baseurl }}/assets/files/Handzettel.pdf)
