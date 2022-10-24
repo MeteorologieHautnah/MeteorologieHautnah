@@ -19,6 +19,8 @@ Wir danken Matthias Uhlig vom Ökolöwe ganz herzlich für seine Unterstützung 
 Mitte Oktober, genauer am 19. Oktober um 17 Uhr, war es dann Zeit für unsere große Abschlussveranstaltung. Im Vorfeld dazu haben wir uns den Datensatz nochmal genau angesehen und einige erste wissenschaftliche Auswertungen angestellt. Zudem sind wir nochmals an das Amt für Umweltschutz der Stadt Leipzig herangetreten und haben nachgefragt, ob Interesse an unserem Datensatz besteht. Dem war tatsächlich so und wir konnten Johannes Dohmen und Miriam Posselt vom Sachgebiet Stadtökologie für einen kurzen Vortrag gewinnen.
 Weiterhin haben wir unseren Kontakt zum UFZ genutzt und Prof. Peter Dietrich vom Department Monitoring- und Erkundungstechnologien eingeladen, der uns über ein derzeit laufendes Projekt im Zusammenhang mit dem Stadtklima und der Nutzung von Citizen Science berichtet hat.
 
+![Vorlesungssaal mit Zuhörenden und einem Menschen vorne der eine Powerpoint Präsentation zeigt.]({{ site.baseurl }}/assets/images/20221019_präsi.jpg)
+
 Aber eins nach dem anderen. Die ganzen Präsentationen findet ihr unter den folgenden Links: [Präsentation Meteorologie hautnah]({{ site.baseurl }}/assets/files/20221019_Meteorologie_hautnah_Abschluss.pdf), [Präsentation Stadt Leipzig]({{ site.baseurl }}/assets/files/20221018_abschlussveranstaltung_meteohautnah.pdf), [Präsentation cityClim]({{ site.baseurl }}/assets/files/CityClim4meteorologie-hautnah.pdf). Dort könnt ihr alles nochmal im Detail anschauen.
 
 Angefangen haben wir diesmal mit einer kleinen Einführung in unser Projekt, da wir über das Stadtradeln und mit der Stadt Leipzig auch einige Interessierte dabei hatten, die uns noch nicht so gut kannten. Dabei haben wir uns auch nochmal unsere beiden Projektziele angeschaut, nämlich die Weitergabe der Faszination am wissenschaftlichen Arbeiten und die Sammlung von Daten zum Leipziger Stadtklima. Wir haben uns erlaubt bei beiden Zielen einen Hacken dahinterzusetzen. Wir haben in den Workshops durchaus das Gefühl bekommen, dass die Teilnehmenden Begeisterung für unsere Arbeit und ihren Anteil daran entwickelt haben. Und beim zweiten Ziel sagen Bilder mehr als tausend Worte.
@@ -37,7 +39,7 @@ Angefangen haben wir diesmal mit einer kleinen Einführung in unser Projekt, da 
 
 Nach dieser kleinen Einführung haben wir dann unsere Aktion vom Anfang wiederholt und baten die Anwesenden den ihrer Meinung nach wärmsten und kältesten Punkt innerhalb der Stadt auf einer Karte an der Tafel mit einem Klebepunkt zu markieren. 
 
-![Stadtplan an einer Tafel mit Menschen davor, welche Klebepunkte anbringen.]({{ site.baseurl }}/assets/images/)
+![Stadtplan an einer Tafel mit Menschen davor, welche Klebepunkte anbringen.]({{ site.baseurl }}/assets/images/20221019_menschen_vor_tafel.jpg)
 
 Im Vergleich zum letzten Mal kamen hierbei noch einige Punkte hinzu, von denen einige tatsächlich überraschend waren. Das zeigt uns auf jeden Fall, dass die Teilnehmenden nicht nur Daten gesammelt, sondern diese auch bewusst wahrgenommen haben. Ein wirklich tolles Ergebnis!
 
@@ -60,6 +62,8 @@ Auf die zweite Frage, was die Teilnehmenden aus dem Projekt mitnehmen, gab es so
 
 ## Erste Datenauswertungen
 
+![Vortragender in einem Hörsaal vor einer Powerpoint Präsentation.]({{ site.baseurl }}/assets/images/20221019_präsi_jakob.jpg)
+
 Nun sind wir etwas tiefer in den Datensatz eingetaucht und Jakob hat sich einmal die gemeinsamen Messfahrten und die Ergebnisse dieser genauer angeschaut. Die Grafiken dazu findet ihr in der Präsentation. Wir konnten zum Beispiel mit der [gemeinsamen Messfahrt am 28. Juli]({{ site.baseurl }}\{% post_url 2022-07-30-dritte-uebergabe %}) messen, dass sich die Parks und die angrenzenden Gebiete abends schneller abkühlen als der Rest der Stadt. Dies geschieht schneller, je größer der Park ist. 
 
 ![Karte von Leipzig mit Messungen mehrerer Messfahrten. Dargestellt ist die Abweichung der gemessenen Lufttemperatur von der Referenzstation Leipzig-Holzhausen.]({{ site.baseurl }}/assets/images/07_28_Park_diff_detail.jpg)
@@ -67,6 +71,8 @@ Nun sind wir etwas tiefer in den Datensatz eingetaucht und Jakob hat sich einmal
 Oscar hatte sich dann die bisherigen Forschungen zum Leipziger Stadtklima angeschaut und diese mit unserem Datensatz verglichen. Hierbei konnte er feststellen, dass wir im Vergleich zu den [Messungen des Deutschen Wetterdienstes](https://speicherwolke.uni-leipzig.de/index.php/f/238587769) durchaus ähnliche Messungen haben, allerdings viel mehr und eine bessere räumliche Abdeckung. Im Hinblick auf den letzten [Forschungsbericht von 2019](https://static.leipzig.de/fileadmin/mediendatenbank/leipzig-de/Stadt/02.3_Dez3_Umwelt_Ordnung_Sport/36_Amt_fuer_Umweltschutz/Energie_und_Klima/Stadtklima/Methodikbericht-mit-Karten-Stadtklimaanalyse-Leipzig.pdf), welcher eine reine Modellstudie war, ergibt sich damit die Möglichkeit einer Evaluierung der Simulationen. Zudem können Veränderungen aufgrund von baulichen Maßnahmen untersucht werden.
 
 ## Vortrag des Amts für Umweltschutz der Stadt Leipzig
+
+![Mensch in besetztem Vorlesungssaal vor Tafel mit Präsentation an der Wand.]({{ site.baseurl }}/assets/images/20221019_vortrag_stadt.jpg)
 
 Hierzu passte sehr gut der [Vortrag]({{ site.baseurl }}/assets/files/20220730_uebergabe.pdf) von Johannes Dohmen, Sachgebietsleiter der Stadtökologie im Amt für Umweltschutz der Stadt Leipzig. Er erklärte uns welche Daten der Stadt zur Verfügung stehen und wie genau sie damit im Sinne der Bürger stadtplanerisch tätig werden. Dabei betrachtet die Stadt nicht nur klimatische Aspekte, sondern auch soziale und geografische. Herr Dohmen gewährte uns damit einen wirklich spannenden Einblick in die Arbeit des Amts für Umweltschutz und konnte zugleich den großen Nutzen unseres Datensatzes für die Stadtplanung aufzeigen. Natürlich muss dieser dafür noch einer genauen Qualitätskontrolle unterzogen werden. Wir freuen uns schon jetzt über die weitere Zusammenarbeit!
 
@@ -80,11 +86,12 @@ Wir sind gespannt wie es mit diesem Projekt weitergeht und freuen uns, dass unse
 
 Und so schnell vergehen eineinhalb Stunden! Nach einer letzten Fragerunde blieb uns dann nichts mehr weiter übrig als nochmal ganz groß DANKE zu sagen für das tolle Engagement der Teilnehmenden. Und mit diesen Worten eröffneten wir dann auch das Buffet, welches wir für einen geselligen Ausklang des Projektes vorbereiten haben lassen. 
 
-![Menschen in einem großen Flur/Treppenhaus mit Essen von einem Buffet.]({{ site.baseurl }}/assets/images/)
+![Menschen in einem großen Flur/Treppenhaus mit Essen von einem Buffet.]({{ site.baseurl }}/assets/images/20221019_buffet.jpg)
 
 Bei entspannten Gesprächen und gutem Essen haben wir dann noch ein letztes Video für unseren Instagramm Takeover des [Kanals von Wissenschaft im Dialog](https://www.instagram.com/wissenschaftimdialog/) aufgenommen und uns nach und nach von den Teilnehmenden verabschiedet.
 
-Vielen Dank fürs Lesen und bis zum nächsten Post!
+Vielen Dank fürs Lesen und bis zum nächsten Blogeintrag!
+
 Johannes, Oscar und Jakob
 
 ![Antworten auf die Frage was die Teilnehmende aus dem Projekt mitnehmen.]({{ site.baseurl }}/assets/images/20221019_Umfrage_7.png)
