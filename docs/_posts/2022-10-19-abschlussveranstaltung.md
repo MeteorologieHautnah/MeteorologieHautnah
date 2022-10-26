@@ -10,7 +10,7 @@ Hallo liebes Internet! Es war nun lange still bei uns. Doch das heißt nicht, da
 
 Eine besondere Aktion haben wir noch zusammen mit dem [Ökolöwe Umweltbund Leipzig e.V.](https://www.oekoloewe.de/) umgesetzt. Das Helmholtz Zentrum für Umweltforschung (UFZ) in Leipzig, mit dem wir schon seit einer Weile zusammenarbeiten, forscht derzeit auch zu Citizen Science. Es geht unter anderem der Fragestellung nach wie sich verschiedene Kontaktwege zum Erreichen von Bürgerwissenschaftlerinnen und Bürgerwissenschaftlern auf die Qualität der erhobenen Daten auswirkt.
 Um dies zu erforschen, haben wir aktiv im Newsletter zum [Stadtradeln](https://www.oekoloewe.de/stadtradeln.html) Werbung für unser Projekt gemacht, um so möglichst aktive Fahrradfahrende zu gewinnen. Diese repräsentieren für die Studie dann eine Gruppe, die gezielt wegen ihrer bereits bekannten bzw. angenommenen hohen Aktivität angesprochen wurde. Im Vergleich dazu stehen die Teilnehmenden, welche bereits am Projekt teilnehmen und über Pressemitteilungen oder andere Wege auf uns aufmerksam geworden sind.
-Die Hypothese, die hier untersucht werden soll ist, dass sich eine gezielte Ansprache von Bürgerinnen und Bürgern positiv auf die Datenerhebung auswirkt. Ob dies wirklich der Fall ist, wird sich in den nächsten Wochen im Zuge einer gezielten Datenauswertung zeigen.
+Die Hypothese, die hier untersucht werden soll, ist, dass sich eine gezielte Ansprache von Bürgerinnen und Bürgern positiv auf die Datenerhebung auswirkt. Ob dies wirklich der Fall ist, wird sich in den nächsten Wochen im Zuge einer gezielten Datenauswertung zeigen.
 
 Wir danken Matthias Uhlig vom Ökolöwe ganz herzlich für seine Unterstützung und hoffen, dass dies nicht die letzte gemeinsame Aktion war.
 
@@ -21,7 +21,8 @@ Weiterhin haben wir unseren Kontakt zum UFZ genutzt und Prof. Peter Dietrich vom
 
 ![Vorlesungssaal mit Zuhörenden und einem Menschen vorne der eine Powerpoint Präsentation zeigt.]({{ site.baseurl }}/assets/images/20221019_präsi.jpg)
 
-Aber eins nach dem anderen. Die ganzen Präsentationen findet ihr unter den folgenden Links: [Präsentation Meteorologie hautnah]({{ site.baseurl }}/assets/files/20221019_Meteorologie_hautnah_Abschluss.pdf), [Präsentation Stadt Leipzig]({{ site.baseurl }}/assets/files/20221018_abschlussveranstaltung_meteohautnah.pdf), [Präsentation cityClim]({{ site.baseurl }}/assets/files/CityClim4meteorologie-hautnah.pdf). Dort könnt ihr alles nochmal im Detail anschauen.
+Aber eins nach dem anderen. Die ganzen Präsentationen findet ihr unter den folgenden Links: [Präsentation Meteorologie hautnah]({{ site.baseurl }}/assets/files/20221019_abschlussveranstaltung_meteohautnah.pdf), [Präsentation Stadt Leipzig]({{ site.baseurl }}/assets/files/20221018_Meteorologie_hautnah_Abschluss.pdf), [Präsentation cityClim]({{ site.baseurl }}/assets/files/CityCLIM4meteorologie-hautnah.pdf). Dort könnt ihr alles nochmal im Detail anschauen.
+
 
 Angefangen haben wir diesmal mit einer kleinen Einführung in unser Projekt, da wir über das Stadtradeln und mit der Stadt Leipzig auch einige Interessierte dabei hatten, die uns noch nicht so gut kannten. Dabei haben wir uns auch nochmal unsere beiden Projektziele angeschaut, nämlich die Weitergabe der Faszination am wissenschaftlichen Arbeiten und die Sammlung von Daten zum Leipziger Stadtklima. Wir haben uns erlaubt bei beiden Zielen einen Hacken dahinterzusetzen. Wir haben in den Workshops durchaus das Gefühl bekommen, dass die Teilnehmenden Begeisterung für unsere Arbeit und ihren Anteil daran entwickelt haben. Und beim zweiten Ziel sagen Bilder mehr als tausend Worte.
 
