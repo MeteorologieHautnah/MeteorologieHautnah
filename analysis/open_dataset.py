@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" Prepare raw data to be publish
+""" Prepare raw data to be published
 
 *author*: janosch Walde
 """
@@ -30,5 +30,5 @@ for i in id_to_drop:
 df.drop(ids_to_drop, inplace=True)
 
 # %% wrtie data
-df.to_csv(data_path+"/sanatized.csv")
+df.to_csv(data_path+"/anonymus_data.csv")
 
