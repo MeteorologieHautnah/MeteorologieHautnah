@@ -1,6 +1,6 @@
 ---
 title: "Auswertung: Einige gemeinsame Messfahrten"
-date: 2022_12_18 12:00:00 +0200
+date: 2022-12-18 12:00:00 +0200
 author: Jakob
 ---
 
