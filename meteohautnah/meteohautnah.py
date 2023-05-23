@@ -7,12 +7,12 @@ import os
 import numpy as np
 import pandas as pd
 import pytz
-from wetterdienst.provider.dwd.observation import DwdObservationRequest, DwdObservationDataset, DwdObservationPeriod, DwdObservationResolution
+from wetterdienst.provider.dwd.observation import DwdObservationRequest, DwdObservationDataset, DwdObservationResolution
 
 
 def read_data(path: str, date: str, speedfilter: float) -> pd.DataFrame:
     """
-    Read in data, filter for values > 10km/h and convert time from UTC to local time.
+    Read in data, filter for values > speedfilter (km/h) and convert time from UTC to local time.
 
     Args:
         path: path where to find csv files
@@ -46,7 +46,7 @@ def create_session_id(df: pd.DataFrame, delta_t_min: float = 300) -> pd.DataFram
 
     Args:
         df: Dataframe as returned by read_data()
-        delta_t_min: minimum time difference between old and new session of same device
+        delta_t_min: minimum time difference between old and new session of same device (s)
 
     Returns: pandas Dataframe with a new column session_id
 
@@ -108,20 +108,58 @@ def station_temp(name, start_date, end_date):
 
 
 def session_change(s):
+    """
+    Compute change of a variable over a whole session.
+
+    Args:
+        s: Series containing a variable for one session
+
+    Returns: Difference between last and first value of given series
+
+    """
     return s.iloc[-1] - s.iloc[0]
 
 
-def drop_short_sessions(df):
+def drop_short_sessions(df, x):
     """
-    Drop sessions from data frame which only consist of one measurement. Can be due to speed filter on read in.
+    Drop sessions from data frame which only consist of less than x measurements (rows).
+    Can be caused by filtering (e.g. speed filter on read in).
+
     Args:
-        df: Data Frame as returned by :py:mod:`meteohautnah.read_data`
+        df: Data Frame with column session_id
+        x: minimum number of points a session needs to have
 
-    Returns: Data Frame with one row sessions dropped
+    Returns: Data Frame with short sessions dropped
 
     """
-    session_stat = df.groupby("session_id").agg(dict(time=session_change))
-    sid_to_drop = list(session_stat[session_stat.time == pd.Timedelta(0, unit="second")].index)
+    session_stat = df.groupby("session_id").agg(dict(session_id="count"))
+    sid_to_drop = list(session_stat[session_stat.session_id < x].index)
     df = df[~df.session_id.isin(sid_to_drop)].copy()
+
+    return df
+
+
+def remove_last_points_from_session(df: pd.DataFrame, x: float) -> pd.DataFrame:
+    """
+    Remove last x measurements (rows) from each session in a data frame.
+
+    Args:
+        df: DataFrame with session_id column
+        x: number of points to remove
+
+    Returns: DataFrame with last x points removed from each session and new index
+
+    """
+    session_stat = df.groupby("session_id").agg(dict(session_id='count'))  # number of points per session
+    # only select sessions with more points than number of points being removed
+    sid_to_drop = list(session_stat[session_stat.session_id > x].index)
+    # keep only the last point of each session to extract its index value
+    id_to_drop = list(df[df.session_id.isin(sid_to_drop)].drop_duplicates('session_id', keep='last').index)
+    # generate a list of index values to drop from the dataset
+    ids_to_drop = []
+    for i in id_to_drop:
+        ids_to_drop += range(i, i - x, -1)
+    df.drop(ids_to_drop, inplace=True)
+    df.reset_index(drop=True, inplace=True)
 
     return df
