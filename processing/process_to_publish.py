@@ -1,15 +1,25 @@
 #!/usr/bin python3
+"""
+| *author*: Janosch Walde, Johannes Röttenbacher
+| *date*: 14-10-2022
 
-"""Create session IDs and preparing data for analysis
--
-*author: Janosch Walde
+Prepare data for publishing:
+
+- filter data to the Leipzig area
+- create session IDs
+- remove last 50 points from each session to anonymize the data
+- drop sessions with less than 5 measurements
+- create new session IDs
+- write a daily csv file
+
 """
 
-import meteohautnah.meteohautnah as mh
-import pandas as pd
-from tqdm import tqdm
-
 if __name__ == '__main__':
+    # %% import modules
+    import meteohautnah.meteohautnah as mh
+    import pandas as pd
+    from tqdm import tqdm
+
     # %% define paths
     base_dir = "C:/Users/Johannes/Documents/MeteorologieHautnah/MeteorologieHautnah"
     # base_dir = "/home/janosch/Dokumente/MeteorologieHautnah"  # Janosch
@@ -18,11 +28,6 @@ if __name__ == '__main__':
     # date = "2022-05-03"  # "2022-05-18"  # yyyy-mm-dd or all
     dates = list(pd.date_range("2022-05-01", "2022-10-18").strftime("%Y-%m-%d"))  # which dates to save
 
-    # %% read in data, create session id(test for one date)
-    # df = mh.read_data(data_path, date, speedfilter=0)
-    # print(df)
-    # df_new = mh.create_session_id(df)
-    # print(df_new[['time', 'device_id', 'session_id']])
     # %% read in data
     df = mh.read_data(data_path, "all", speedfilter=0)
 
@@ -31,14 +36,20 @@ if __name__ == '__main__':
     location_selection = (df.lon.between(lon_min, lon_max)) & (df.lat.between(lat_min, lat_max))
     df = df[location_selection].copy()
 
-    # %% create session id for whole dataset and write to new csv file
+    # %% create session id for whole dataset
     df = mh.create_session_id(df)
-    # drop sessions which only consist of one row/entry
-    df = mh.drop_short_sessions(df)
-    # create new session ids after dropping sessions
+
+    # %% remove last 50 points of each session to anonymize the data
+    df = mh.remove_last_points_from_session(df, 50)
+
+    # %% drop sessions which only consist of five rows/entries
+    df = mh.drop_short_sessions(df, 5)
+
+    # %% create new session ids after dropping sessions
     df = mh.create_session_id(df)
     date_str = df.time.dt.strftime("%Y-%m-%d")  # create series of dates for writing to csv files
 
+    # %% write daily csv files
     for d in tqdm(dates):
         df_out = df[d == date_str]
         df_out.to_csv(f"{output_path}/{d}_meteotracker.csv", index=False)
