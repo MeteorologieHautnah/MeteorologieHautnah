@@ -19,7 +19,7 @@ def thousands(x, pos):
 # %% define paths
 base_dir = "C:/Users/Johannes/Documents/MeteorologieHautnah/MeteorologieHautnah"
 data_path = f"{base_dir}/Daten/v1.0/"
-plot_path = f"{base_dir}/Daten/plots/"
+plot_path = f"{base_dir}/Daten/plots/Vorbereitungen_abschluss-VA"
 date = "all"  # "2022-05-18"  # yyyy-mm-dd or all
 files = os.listdir(data_path)
 
@@ -27,8 +27,8 @@ files = os.listdir(data_path)
 df = mh.read_data(data_path, date, speedfilter=10)
 
 # %% select date range
-df = df[df.time.dt.month == 8]  # select only one month
-month = 'Juni'
+df = df[df.time.dt.month == 10]  # select only one month
+month = 'Oktober'
 
 # %% calculate some statistics
 at_mean, at_min, at_max = df.air_temperature.mean(), df.air_temperature.min(), df.air_temperature.max()
