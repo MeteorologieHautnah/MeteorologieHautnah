@@ -9,6 +9,9 @@ import matplotlib
 import matplotlib.pyplot as plt
 import datetime
 
+cm = 1 / 2.54  # inch to cm conversion
+figsize_wide = [24 * cm, 12 * cm]
+
 
 def read_command_line_args():
     """
