@@ -52,7 +52,7 @@ if __name__ == '__main__':
     # %% write daily csv files
     for d in tqdm(dates):
         df_out = df[d == date_str]
-        df_out.to_csv(f"{output_path}/{d}_meteotracker.csv", index=False)
+        df_out.to_csv(f"{output_path}/{d}_meteotracker.csv", index=False, date_format="%Y-%m-%d %H:%M:%S%z")
 
 
 
