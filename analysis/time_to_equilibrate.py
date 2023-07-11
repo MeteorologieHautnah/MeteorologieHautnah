@@ -8,8 +8,16 @@ Options:
 - hard cutoff -> discard first 50 points of each session
 - dynamic cut off -> look how long it takes for the gradient to stabilize (move towards zero)
 - no cut off but flag according to dynamic cut off
+
+Results:
+- hard cutoff: at least 50 points need to be removed to be on the safe side and remove the indoor temperature influenced measurements
+- dynamic cutoff: the gradient/diff is not a good metric to look at these points
+- flagging is not possible due to the dynamic cutoff being not a good option
+
+Conclusion:
+Leave in all points but mention in manuscript that first 50 points of each session should be removed.
+Create a function to do that automatically with the dataframe.
 """
-import pandas as pd
 
 # %% import modules
 import meteohautnah.helpers as h
@@ -17,6 +25,7 @@ import meteohautnah.meteohautnah as mh
 import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 
 # %% set paths
 base_path = "C:/Users/Johannes/Documents/MeteorologieHautnah/MeteorologieHautnah/Daten"
@@ -38,9 +47,6 @@ plt.show()
 plt.close()
 
 # -> the speed filter does not remove the too warm measurements at the beginning
-
-# %% calculate temperature gradient
-
 
 # %% plot temperature with gradient and diff
 df_plot = df.loc[df.session_id == 816][1:]
