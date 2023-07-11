@@ -33,7 +33,7 @@ def read_data(path: str, date: str, speedfilter: float) -> pd.DataFrame:
     df = df[df.speed > speedfilter]
 
     # %% Convert time to datetime and to European timezone
-    df["time"] = pd.to_datetime(df["time"], format="mixed")  # convert time column to type datetime
+    df["time"] = pd.to_datetime(df["time"])  # convert time column to type datetime
     my_timezone = pytz.timezone('Europe/Berlin')
     df['time'] = df['time'].dt.tz_convert(my_timezone)
 
