@@ -51,6 +51,7 @@ def create_session_id(df: pd.DataFrame, delta_t_min: float = 300) -> pd.DataFram
     Returns: pandas Dataframe with a new column session_id
 
     """
+    df = df.copy(deep=True)  # make sure to work on a copy not on a view
     session_id = 0
     dev_ids = df.device_id.unique()  # find unique device ids
     df.sort_values(["device_id", "time"], ascending=True, inplace=True)
@@ -134,31 +135,34 @@ def drop_short_sessions(df, x):
     """
     session_stat = df.groupby("session_id").agg(dict(session_id="count"))
     sid_to_drop = list(session_stat[session_stat.session_id < x].index)
-    df = df[~df.session_id.isin(sid_to_drop)].copy()
+    df = df[~df.session_id.isin(sid_to_drop)].copy(deep=True)
 
     return df
 
 
-def remove_last_points_from_session(df: pd.DataFrame, x: float) -> pd.DataFrame:
+def remove_points_from_session(df: pd.DataFrame, keep: str, x: float) -> pd.DataFrame:
     """
-    Remove last x measurements (rows) from each session in a data frame.
+    Remove first/last x measurements (rows) from each session in a data frame.
 
     Args:
         df: DataFrame with session_id column
+        keep: 'first' or 'last', remove points from beginning or end of session
         x: number of points to remove
 
-    Returns: DataFrame with last x points removed from each session and new index
+    Returns: DataFrame with first/last x points removed from each session and a new index
 
     """
+    df = df.copy(deep=True)  # make sure to work on a copy not on a view
     session_stat = df.groupby("session_id").agg(dict(session_id='count'))  # number of points per session
     # only select sessions with more points than number of points being removed
-    sid_to_drop = list(session_stat[session_stat.session_id > x].index)
-    # keep only the last point of each session to extract its index value
-    id_to_drop = list(df[df.session_id.isin(sid_to_drop)].drop_duplicates('session_id', keep='last').index)
+    sid_to_drop = session_stat[session_stat.session_id > x].index.to_list()
+    # keep only the first/last point of each session to extract its index value
+    id_to_drop = df[df.session_id.isin(sid_to_drop)].drop_duplicates('session_id', keep=keep).index.to_list()
     # generate a list of index values to drop from the dataset
     ids_to_drop = []
     for i in id_to_drop:
-        ids_to_drop += range(i, i - x, -1)
+        ids_to_add = range(i, i + x, 1) if keep == "first" else range(i, i - x, -1)
+        ids_to_drop += ids_to_add
     df.drop(ids_to_drop, inplace=True)
     df.reset_index(drop=True, inplace=True)
 

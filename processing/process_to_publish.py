@@ -40,7 +40,7 @@ if __name__ == '__main__':
     df = mh.create_session_id(df)
 
     # %% remove last 50 points of each session to anonymize the data
-    df = mh.remove_last_points_from_session(df, 50)
+    df = mh.remove_points_from_session(df, "last", 50)
 
     # %% drop sessions which only consist of five rows/entries
     df = mh.drop_short_sessions(df, 5)
