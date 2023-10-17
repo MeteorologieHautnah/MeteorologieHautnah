@@ -72,8 +72,8 @@ df["lo"] = df["lo"].astype(str)  # convert location column to string
 df["lo"] = df["lo"].str.slice(1, -1)  # slice of brackets
 df[["lon", "lat"]] = df["lo"].str.split(', ', expand=True)  # split location into lon and lat column
 df.drop(["lo"], axis=1, inplace=True)  # drop original location column
-header = dict(a="altitude", H="humidity", s="speed", HDX="humidex", time="time", P="pressure", T0="air_temperature",
-              td="dewpoint", tag="device_id", L="luminocity", lon="lon", lat="lat")
+header = dict(tag="device_id", si="session_id", time="time", lat="lat", lon="lon", a="altitude", s="speed",
+              T0="air_temperature", H="humidity", P="pressure", HDX="humidex", td="dewpoint", L="luminocity")
 df = df.rename(columns=header)
 # reorder columns
 df = df[[h for h in header.values()]]
