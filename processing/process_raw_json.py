@@ -65,6 +65,7 @@ if len(files) > 1:
 elif len(files) == 0:
     logger.info(f"No data found for {date_str}")
     sys.exit(1)
+    # continue  # needed in for loop
 else:
     df = preprocess_json(f"{indir}/{files[0]}")
 
@@ -76,7 +77,15 @@ header = dict(tag="device_id", si="session_id", time="time", lat="lat", lon="lon
               T0="air_temperature", H="humidity", P="pressure", HDX="humidex", td="dewpoint", L="luminocity")
 df = df.rename(columns=header)
 # reorder columns
-df = df[[h for h in header.values()]]
+try:
+    df = df[[h for h in header.values()]]
+except KeyError as e:
+    # sometimes the luminocity is not written to the data
+    # in that case pop it from the header dictionary
+    if "luminocity" in f"{e}":
+        header.pop("L")
+finally:
+    df = df[[h for h in header.values()]]
 
 outfile = f"{outdir}/{date_str}_meteotracker.csv"
 df.to_csv(outfile, index=None)  # save data to csv without an index column
