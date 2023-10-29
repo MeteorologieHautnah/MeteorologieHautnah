@@ -6,10 +6,8 @@
 Prepare data for publishing:
 
 - filter data to the Leipzig area
-- create session IDs
 - remove last 50 points from each session to anonymize the data
 - drop sessions with less than 5 measurements
-- create new session IDs
 - write a daily csv file
 
 """
@@ -36,18 +34,14 @@ if __name__ == '__main__':
     location_selection = (df.lon.between(lon_min, lon_max)) & (df.lat.between(lat_min, lat_max))
     df = df[location_selection].copy()
 
-    # %% create session id for whole dataset
-    df = mh.create_session_id(df)
-
     # %% remove last 50 points of each session to anonymize the data
     df = mh.remove_points_from_session(df, "last", 50)
 
     # %% drop sessions which only consist of five rows/entries
     df = mh.drop_short_sessions(df, 5)
 
-    # %% create new session ids after dropping sessions
-    df = mh.create_session_id(df)
-    date_str = df.time.dt.strftime("%Y-%m-%d")  # create series of dates for writing to csv files
+    # %% create series of dates for writing to csv files
+    date_str = df.time.dt.strftime("%Y-%m-%d")
 
     # %% write daily csv files
     for d in tqdm(dates):
