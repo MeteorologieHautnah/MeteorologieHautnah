@@ -13,6 +13,7 @@ import pytz
 def read_data(path: str, date: str, speedfilter: float) -> pd.DataFrame:
     """
     Read in data, filter for values > speedfilter (km/h) and convert time from UTC to local time.
+    Resets the index.
 
     Args:
         path: path where to find csv files
@@ -36,6 +37,7 @@ def read_data(path: str, date: str, speedfilter: float) -> pd.DataFrame:
     df["time"] = pd.to_datetime(df["time"])  # convert time column to type datetime
     my_timezone = pytz.timezone('Europe/Berlin')
     df['time'] = df['time'].dt.tz_convert(my_timezone)
+    df.reset_index(drop=True, inplace=True)
 
     return df
 
@@ -125,6 +127,7 @@ def drop_short_sessions(df, x):
     """
     Drop sessions from data frame which only consist of less than x measurements (rows).
     Can be caused by filtering (e.g. speed filter on read in).
+    Resets the index afterwards.
 
     Args:
         df: Data Frame with column session_id
@@ -136,6 +139,7 @@ def drop_short_sessions(df, x):
     session_stat = df.groupby("session_id").agg(dict(session_id="count"))
     sid_to_drop = list(session_stat[session_stat.session_id < x].index)
     df = df[~df.session_id.isin(sid_to_drop)].copy(deep=True)
+    df.reset_index(drop=True, inplace=True)
 
     return df
 
@@ -163,7 +167,8 @@ def remove_points_from_session(df: pd.DataFrame, keep: str, x: float) -> pd.Data
     for i in id_to_drop:
         ids_to_add = range(i, i + x, 1) if keep == "first" else range(i, i - x, -1)
         ids_to_drop += ids_to_add
-    df.drop(ids_to_drop, inplace=True)
+    # ids_to_drop.sort()
+    df.drop(ids_to_drop[:10], inplace=False)
     df.reset_index(drop=True, inplace=True)
 
     return df
