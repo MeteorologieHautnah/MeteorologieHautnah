@@ -7,6 +7,8 @@ import os
 import numpy as np
 import pandas as pd
 import pytz
+from geopy import distance
+from tqdm import tqdm
 # from wetterdienst.provider.dwd.observation import DwdObservationRequest, DwdObservationDataset, DwdObservationResolution
 
 
@@ -167,3 +169,24 @@ def remove_points_from_session(df: pd.DataFrame, keep: str, x: float) -> pd.Data
     df.reset_index(drop=True, inplace=True)
 
     return df
+
+
+def add_distance(df):
+    """
+    Add a distance column and a cumulative distance column to the dataframe
+    showing the distance between the previous and the current location.
+
+    Args:
+        df: pandas DataFrame grouped by session_id
+
+    Returns: df with new columns distance and cum_distance
+
+    """
+    loc1 = [(lat, lon) for lat, lon in
+            zip(df.lat[:-1].to_numpy(), df.lon[:-1].to_numpy())]
+    loc2 = [(lat, lon) for lat, lon in
+            zip(df.lat[1:].to_numpy(), df.lon[1:].to_numpy())]
+    distances = [distance.distance(p1, p2).m for p1, p2 in zip(loc1, loc2)]
+    distances.insert(0, 0)  # add zero as the first value to keep same length of values
+
+    return distances
