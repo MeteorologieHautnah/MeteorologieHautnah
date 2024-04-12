@@ -35,7 +35,7 @@ plot_path = f"{base_path}/plots/tmp"
 fig_path = "./analysis/plots_speed_dependency"
 
 # %% read in data and select time
-dates = ["2022-07-18", "2022-07-19", "2022-07-20"]  # high pressure, low wind, lots of sun, no cloud
+dates = ["2022-05-18", "2022-05-19", "2022-05-20"]  # high pressure, low wind, lots of sun, no cloud
 # -> do not show any correlation between speed and normalized air temperature (pearson r: 0.27055)
 # try detrending it -> shows even less correlation and a increased spread around 20km/h probably due to more data points there
 df = pd.concat([mh.read_data(data_path, date, speedfilter=0) for date in dates])
@@ -87,4 +87,3 @@ plt.close()
 
 # %% compute correlation
 df_sel[["speed", "air_temperature"]].reset_index(drop=True).corr()
-
