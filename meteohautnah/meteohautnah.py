@@ -7,7 +7,10 @@ import os
 import numpy as np
 import pandas as pd
 import pytz
-# from wetterdienst.provider.dwd.observation import DwdObservationRequest, DwdObservationDataset, DwdObservationResolution
+from geopy import distance
+from tqdm import tqdm
+from wetterdienst import Resolution
+from wetterdienst.provider.dwd.observation import DwdObservationRequest, DwdObservationDataset
 
 
 def read_data(path: str, date: str, speedfilter: float) -> pd.DataFrame:
@@ -172,3 +175,53 @@ def remove_points_from_session(df: pd.DataFrame, keep: str, x: float) -> pd.Data
     df.reset_index(drop=True, inplace=True)
 
     return df
+
+
+def add_distance(df):
+    """
+    Add a distance column and a cumulative distance column to the dataframe
+    showing the distance between the previous and the current location.
+
+    Args:
+        df: pandas DataFrame grouped by session_id
+
+    Returns: df with new columns distance and cum_distance
+
+    """
+    loc1 = [(lat, lon) for lat, lon in
+            zip(df.lat[:-1].to_numpy(), df.lon[:-1].to_numpy())]
+    loc2 = [(lat, lon) for lat, lon in
+            zip(df.lat[1:].to_numpy(), df.lon[1:].to_numpy())]
+    distances = [distance.distance(p1, p2).m for p1, p2 in zip(loc1, loc2)]
+    distances.insert(0, 0)  # add zero as the first value to keep same length of values
+
+    return distances
+
+
+# define a function to retrieve station data from the DWD network
+def station_temp(name, start_date, end_date):
+    request = DwdObservationRequest(parameter=DwdObservationDataset.TEMPERATURE_AIR,
+                                    resolution=Resolution.MINUTE_10,
+                                    start_date=start_date,
+                                    end_date=end_date,
+                                    ).filter_by_name(name=name)
+
+    df = request.values.all().df
+    df = df.to_pandas()
+    df_t = df[df['parameter'] == "temperature_air_mean_200"].drop(['dataset', 'parameter', 'quality'], axis=1)
+    df_t.rename(columns={'value': 'air_temperature'}, inplace=True)
+    df_dew = df[df.parameter == "temperature_dew_point_mean_200"].drop(
+        ['station_id', 'dataset', 'parameter', 'quality'], axis=1)
+
+    df_dew.rename(columns={'value': 'dewpoint'}, inplace=True)
+
+    df_t.set_index(pd.DatetimeIndex(df_t['date']), inplace=True)
+    df_dew.set_index(pd.DatetimeIndex(df_t['date']), inplace=True)
+
+    df_out = df_t.merge(df_dew, how='left', left_index=True, right_index=True)
+    df_out["time"] = pd.to_datetime(df_t.date, format="%Y-%m-%d %H:%M:%S%z").dt.tz_localize(None)
+    df_out = df_out.drop(["date_x", "date_y"], axis=1)
+    df_out['air_temperature'] = df_out['air_temperature'] - 273.15
+    df_out['dewpoint'] = df_out['dewpoint'] - 273.15
+
+    return df_out
