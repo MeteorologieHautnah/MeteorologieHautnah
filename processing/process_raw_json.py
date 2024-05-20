@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-"""Process the raw json data
+"""
+Process the raw json data
 Creates an easy-to-read in csv file from the raw json file by cutting off the curl header.
 Writes a log file.
 
@@ -8,7 +9,7 @@ usage: python process_raw_json.py [date=yyyymmdd]
 *author*: Johannes Röttenbacher
 """
 import sys
-sys.path.append(".")
+sys.path.append('.')
 from meteohautnah.helpers import read_command_line_args, make_dir
 import os
 from io import StringIO
@@ -25,7 +26,7 @@ def preprocess_json(file: str) -> pd.DataFrame:
     :param file: Full file path
     :return: pandas DataFrame
     """
-    with open(file, "r") as f:
+    with open(file, 'r') as f:
         data = f.readlines()[13:][0][1:-1]
         df = pd.read_json(StringIO(data), lines=True)
 
@@ -33,49 +34,50 @@ def preprocess_json(file: str) -> pd.DataFrame:
 
 
 # setup file logger
-logdir = "/projekt_agmwend/home_rad/jroettenbacher/meteo_hautnah/logs"
-# logdir = "C:/Users/Johannes/Documents/MeteorologieHautnah/MeteorologieHautnah/Daten/logs"  # for local processing
-logfile = f"{logdir}/process_raw_json.log"
+logdir = '/projekt_agmwend/home_rad/jroettenbacher/meteo_hautnah/logs'
+# logdir = 'C:/Users/Johannes/Documents/MeteorologieHautnah/MeteorologieHautnah/Daten/logs'  # for local processing
+logfile = f'{logdir}/process_raw_json.log'
 logger = logging.getLogger(__name__)
 handler = logging.FileHandler(logfile)
-formatter = logging.Formatter('%(asctime)s : %(levelname)s - %(message)s', datefmt="%c")
+formatter = logging.Formatter('%(asctime)s : %(levelname)s - %(message)s', datefmt='%c')
 handler.setFormatter(formatter)
 logger.addHandler(handler)
 logger.setLevel(logging.DEBUG)
 
 # standard options
 yesterday = dt.datetime.now() - dt.timedelta(days=1)
-date_var = yesterday.strftime("%Y%m%d")
+date_var = yesterday.strftime('%Y%m%d')
 # read in command line args to overwrite standard options
 args = read_command_line_args()
-date_var = args["date"] if "date" in args else date_var
+date_var = args['date'] if 'date' in args else date_var
 # loop over all dates
-# for date_var in tqdm([d.strftime("%Y%m%d") for d in pd.date_range("2022-05-01", "2022-10-17")]):
-logger.info(f"Preprocessing {date_var}")
+# for date_var in tqdm([d.strftime('%Y%m%d') for d in pd.date_range('2022-05-01', '2022-10-17')]):
+logger.info(f'Preprocessing {date_var}')
 
-date_str = dt.datetime.strptime(date_var, "%Y%m%d").strftime("%Y-%m-%d")
-indir = f"/projekt_agmwend2/data_raw/meteorologie_hautnah_raw/{date_str}"
-outdir = f"/projekt_agmwend/data/meteorologie_hautnah/daily_csv"
+date_str = dt.datetime.strptime(date_var, '%Y%m%d').strftime('%Y-%m-%d')
+indir = f'/projekt_agmwend2/data_raw/meteorologie_hautnah_raw/{date_str}'
+outdir = f'/projekt_agmwend/data/meteorologie_hautnah/daily_csv'
 # for local processing
-# indir = f"C:/Users/Johannes/Documents/MeteorologieHautnah/MeteorologieHautnah/Daten/raw/{date_str}"
-# outdir = f"C:/Users/Johannes/Documents/MeteorologieHautnah/MeteorologieHautnah/Daten/processed"
+# indir = f'C:/Users/Johannes/Documents/MeteorologieHautnah/MeteorologieHautnah/Daten/raw/{date_str}'
+# outdir = f'C:/Users/Johannes/Documents/MeteorologieHautnah/MeteorologieHautnah/Daten/processed'
 
 files = os.listdir(indir)  # list all files
 if len(files) > 1:
-    df = pd.concat([preprocess_json(f"{indir}/{f}") for f in files])  # preprocess files and concatenate them
+    df = pd.concat([preprocess_json(f'{indir}/{f}') for f in files])  # preprocess files and concatenate them
 elif len(files) == 0:
-    logger.info(f"No data found for {date_str}")
+    logger.info(f'No data found for {date_str}')
     sys.exit(1)
     # continue  # needed in for loop
 else:
-    df = preprocess_json(f"{indir}/{files[0]}")
+    df = preprocess_json(f'{indir}/{files[0]}')
 
-df["lo"] = df["lo"].astype(str)  # convert location column to string
-df["lo"] = df["lo"].str.slice(1, -1)  # slice of brackets
-df[["lon", "lat"]] = df["lo"].str.split(', ', expand=True)  # split location into lon and lat column
-df.drop(["lo"], axis=1, inplace=True)  # drop original location column
-header = dict(tag="device_id", si="session_id", time="time", lat="lat", lon="lon", a="altitude", s="speed",
-              T0="air_temperature", H="humidity", P="pressure", HDX="humidex", td="dewpoint", L="luminocity")
+df['lo'] = df['lo'].astype(str)  # convert location column to string
+df['lo'] = df['lo'].str.slice(1, -1)  # slice of brackets
+df[['lon', 'lat']] = df['lo'].str.split(', ', expand=True)  # split location into lon and lat column
+df.drop(['lo'], axis=1, inplace=True)  # drop original location column
+header = dict(tag='device_id', si='session_id', time='time', lat='lat', lon='lon', a='altitude', s='speed',
+              T0='air_temperature', td='dewpoint', tp='potential_temperature', H='humidity', P='pressure',
+              HDX='humidex', L='luminocity')
 df = df.rename(columns=header)
 # reorder columns
 try:
@@ -83,11 +85,11 @@ try:
 except KeyError as e:
     # sometimes the luminocity is not written to the data
     # in that case pop it from the header dictionary
-    if "luminocity" in f"{e}":
-        header.pop("L")
+    if 'luminocity' in f'{e}':
+        header.pop('L')
 finally:
     df = df[[h for h in header.values()]]
 
-outfile = f"{outdir}/{date_str}_meteotracker.csv"
+outfile = f'{outdir}/{date_str}_meteotracker.csv'
 df.to_csv(outfile, index=None)  # save data to csv without an index column
-logger.info(f"Saved {outfile}")
+logger.info(f'Saved {outfile}')
