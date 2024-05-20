@@ -11,6 +11,7 @@ import sys
 sys.path.append(".")
 from meteohautnah.helpers import read_command_line_args, make_dir
 import os
+from io import StringIO
 import datetime as dt
 import pandas as pd
 import logging
@@ -26,7 +27,7 @@ def preprocess_json(file: str) -> pd.DataFrame:
     """
     with open(file, "r") as f:
         data = f.readlines()[13:][0][1:-1]
-        df = pd.read_json(data, lines=True)
+        df = pd.read_json(StringIO(data), lines=True)
 
     return df
 
