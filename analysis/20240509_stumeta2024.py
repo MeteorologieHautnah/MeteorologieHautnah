@@ -211,16 +211,16 @@ plt.savefig(f'{plot_path}/alle_humidex_karte.png', dpi=300, transparent=True)
 plt.show()
 plt.close()
 # %% read in DWD data
-df_dwd = mh.station_temp(name='Leipzig-Holzhausen',
-                         start_date='2024-05-09',
-                         end_date='2024-05-10')
-df_dwd.reset_index(drop=True, inplace=True)
-# %% add DWD data do dataframe
-df_dwd['device_id'] = 'DWD'
-df_dwd['Gruppe'] = 'DWD'
-df_dwd['Nummer'] = 'DWD'
-df_dwd['time'] = df_dwd.time.dt.tz_localize('Europe/Berlin')
-df = pd.concat([df, df_dwd])
+# df_dwd = mh.station_temp(name='Leipzig-Holzhausen',
+#                          start_date='2024-05-09',
+#                          end_date='2024-05-10')
+# df_dwd.reset_index(drop=True, inplace=True)
+# # %% add DWD data do dataframe
+# df_dwd['device_id'] = 'DWD'
+# df_dwd['Gruppe'] = 'DWD'
+# df_dwd['Nummer'] = 'DWD'
+# df_dwd['time'] = df_dwd.time.dt.tz_localize('Europe/Berlin')
+# df = pd.concat([df, df_dwd])
 
 # %% plot timeseries comparison with DWD Station
 plt.rc('font', size=18)
@@ -242,4 +242,7 @@ ax.plot([], color=sns.color_palette('flare')[0], ls='-', label='Lufttemperatur')
 ax.legend()
 sns.move_legend(ax, "upper left", bbox_to_anchor=(1, 1))
 ax.grid()
+plt.savefig(f'{plot_path}/20240509_zeitreihe_temperatur_taupunkt_dwd.png', dpi=300)
+plt.savefig(f'{publish_path}/20240509_zeitreihe_temperatur_taupunkt_dwd.png', dpi=300)
 plt.show()
+plt.close()
