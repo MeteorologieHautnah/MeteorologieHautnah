@@ -3,13 +3,11 @@ permalink: /contact
 ---
 
 Meteorologie hautnah\
-Johannes Röttenbacher\
-Universität Leipzig\
-Leipziger Institut für Meteorologie\
-Postanschrift: Stephanstr. 3, 04103 Leipzig\
-Büroanschrift: Prager Str. 34, 04317 Leipzig\
+Oscar Ritter\
+Leibniz-Institut für Troposphärenforschung e.V.\
+Post- und Büroanschrift: Permoserstr. 15, 04318 Leipzig\
 Deutschland
 
-Telefon: +49 341 9736655
+Telefon: +49 341 2717-7448
 
 <a href="mailto:{{ site.email | encode_email }}" title="E-Mail">E-Mail</a>
