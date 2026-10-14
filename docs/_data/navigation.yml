@@ -8,6 +8,8 @@ main:
     url: /faq
   - title: "Über uns"
     url: /about
+  - title: "Referenzen"
+    url: /references
   - title: "Kontakt"
     url: /contact
   - title: "Datenschutz"
