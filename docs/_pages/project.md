@@ -9,6 +9,7 @@ redirect_from:
 Im Projekt "Meteorologie hautnah" ging es darum, mit Leipziger Pendlerinnen und Pendlern im Sommer 2022 Wetterdaten zum Leipziger Stadtklima aufzuzeichnen. Den Teilnehmenden wurden außerdem im Rahmen von Workshops die wissenschaftlichen Auswertemethoden näher gebracht. 
 
 ![Aufsicht auf einen MeteoTracker bzw. mobilen Messsensor]({{ site.baseurl }}/assets/images/mt_aufsicht.jpg "MeteoTracker")
+
 Die Aufzeichnung der Wetterdaten erfolgt mit [MeteoTrackern](https://meteotracker.com/en/home/), einem kleinen Sensor, der am Fahrrad oder Autodach befestigt werden kann und die meteorologischen Parameter Temepratur, Feuchte und Druck misst.
 Die Daten werden dann direkt über die MeteoTracker App in ein Online-Portal hochgeladen und können von der teilnehmenden Person entweder in diesem Portal oder auf ihrem Smartphone visualisiert werden.
 So erhalten die Teilnehmerinnen und Teilnehmer Messwerte, welche sie zum Beispiel mit der von ihnen gefühlten Temperatur abgleichen können.
